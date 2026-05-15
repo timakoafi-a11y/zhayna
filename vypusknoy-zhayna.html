@@ -206,16 +206,12 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--dark);min-
 
   <div class="panel" id="panel-split">
     <div class="sec-title">🍭 Детский счёт</div>
-    <div class="input-group"><label class="input-label">Пакет на ребёнка (тг)</label><input class="inp" type="number" id="kid-pkg" value="10000" oninput="save();recalc()"></div>
-    <div class="input-group"><label class="input-label">Доп. заказ детям — итого (тг)</label><input class="inp" type="number" id="kid-extra" value="0" oninput="save();recalc()"></div>
+    <div class="input-group"><label class="input-label">Пакет на ребёнка (тг) — уже оплачено из сбора</label><input class="inp" type="number" id="kid-pkg" value="10000" oninput="save();recalc()"></div>
+    <div class="input-group"><label class="input-label">Доп. заказ детям — итого (тг, если дозаказали)</label><input class="inp" type="number" id="kid-extra" value="0" oninput="save();recalc()"></div>
     <div class="sec-title">🥂 Взрослый счёт</div>
     <div class="inp-row">
-      <div class="input-group"><label class="input-label">Еда взрослых — итого (тг)</label><input class="inp" type="number" id="adult-food" value="0" oninput="save();recalc()"></div>
-      <div class="input-group"><label class="input-label">Прочее (аренда, декор)</label><input class="inp" type="number" id="misc" value="0" oninput="save();recalc()"></div>
-    </div>
-    <div class="inp-row">
-      <div class="input-group"><label class="input-label">Воспитателей (чел.)</label><input class="inp" type="number" id="teacher-cnt" value="2" oninput="save();recalc()"></div>
-      <div class="input-group"><label class="input-label">Еда воспитателей (тг)</label><input class="inp" type="number" id="teacher-food" value="0" oninput="save();recalc()"></div>
+      <div class="input-group"><label class="input-label">Взрослых пришло (чел.)</label><input class="inp" type="number" id="adult-cnt" value="15" min="1" oninput="save();recalc()"></div>
+      <div class="input-group"><label class="input-label">Общий счёт взрослых (тг)</label><input class="inp" type="number" id="adult-food" value="0" oninput="save();recalc()"></div>
     </div>
     <div class="sec-title">✨ Итог</div>
     <div id="bill-output"></div>
@@ -296,9 +292,10 @@ let state={payers:DEF.map(p=>({...p})),kidPkg:10000,kidExtra:0,adultFood:0,teach
 function load(){try{const r=localStorage.getItem('zhayna_v4');if(r){const d=JSON.parse(r);state={...state,...d};}}catch(e){}}
 function save(){
   try{
-    const ids={kidPkg:'kid-pkg',kidExtra:'kid-extra',adultFood:'adult-food',teacherCnt:'teacher-cnt',teacherFood:'teacher-food',misc:'misc'};
-    Object.entries(ids).forEach(([k,id])=>{const el=document.getElementById(id);if(el)state[k]=+el.value||0;});
     state.kidPkg=+(document.getElementById('kid-pkg')?.value||10000);
+    state.kidExtra=+(document.getElementById('kid-extra')?.value||0);
+    state.adultCnt=+(document.getElementById('adult-cnt')?.value||15);
+    state.adultFood=+(document.getElementById('adult-food')?.value||0);
     localStorage.setItem('zhayna_v4',JSON.stringify(state));
     const n=new Date();
     document.getElementById('last-saved').textContent=n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
@@ -402,44 +399,45 @@ function adjKids(i,d){state.payers[i].kids=Math.max(1,state.payers[i].kids+d);sa
 function addPayer(){state.payers.push({child:'Новый',name:'Имя родителя',kids:1,paid:0});save();renderList();setTimeout(()=>{const items=document.querySelectorAll('.payer-card');if(items.length)items[items.length-1].scrollIntoView({behavior:'smooth',block:'center'});},100);}
 
 function recalc(){
-  const kids=totalKids(),adults=totalAdults();
+  const kids=totalKids();
   const kp=+(document.getElementById('kid-pkg')?.value||state.kidPkg);
   const ke=+(document.getElementById('kid-extra')?.value||state.kidExtra);
+  const adultCnt=+(document.getElementById('adult-cnt')?.value||state.adultCnt||15);
   const af=+(document.getElementById('adult-food')?.value||state.adultFood);
-  const tf=+(document.getElementById('teacher-food')?.value||state.teacherFood);
-  const mc=+(document.getElementById('misc')?.value||state.misc);
-  const kT=kids*kp+ke,kC=kids*KID_BASE,kG=Math.max(0,kT-kC);
-  const kEPP=kG>0&&kids>0?Math.ceil(kG/kids):0;
-  const res=(COLLECT-KID_BASE)*kids-kG;
-  const aT=af+tf+mc,sU=Math.min(Math.max(0,res),aT),aG=Math.max(0,aT-sU);
-  const aPP=aG>0&&adults>0?Math.ceil(aG/adults):0;
-  const tot=kEPP+aPP;
+
+  const kidsTotal=kids*kp+ke;
+  const kidsCovered=kids*KID_BASE;
+  const kidsGap=Math.max(0,kidsTotal-kidsCovered);
+  const kidsExtraPP=kids>0?Math.ceil(kidsGap/kids):0;
+  const kidsDozPP=kids>0?Math.ceil(ke/kids):0;
+
+  const adultPP=adultCnt>0?Math.ceil(af/adultCnt):0;
+
   const out=document.getElementById('bill-output');
   if(!out)return;
   out.innerHTML=`
     <div class="bill-block">
-      <div class="bill-header kids-hdr"><div class="bill-icon">🍭</div><div class="bill-title">Детский счёт</div><div class="bill-total kids-c">${fmt(kT)} тг</div></div>
+      <div class="bill-header kids-hdr"><div class="bill-icon">🍭</div><div class="bill-title">Детский счёт</div><div class="bill-total kids-c">${fmt(kidsTotal)} тг</div></div>
       <div class="bill-rows">
         <div class="bill-row"><span class="lbl">Пакеты (${kids} × ${fmt(kp)} тг)</span><span class="val">${fmt(kids*kp)} тг</span></div>
-        <div class="bill-row"><span class="lbl">Доп. заказ детям</span><span class="val">${fmt(ke)} тг</span></div>
-        <div class="bill-row good"><span class="lbl">Покрыто из сбора</span><span class="val">−${fmt(kC)} тг</span></div>
-        <div class="bill-row ${kG>0?'bad':'good'} strong"><span class="lbl">Доп. с родителя за детей</span><span class="val">${kEPP>0?'+'+fmt(kEPP)+' тг':'Покрыто ✓'}</span></div>
+        <div class="bill-row good"><span class="lbl">Покрыто из сбора (10 000 × ${kids})</span><span class="val">−${fmt(kidsCovered)} тг</span></div>
+        ${ke>0?`<div class="bill-row"><span class="lbl">Доп. заказ детям (итого)</span><span class="val">${fmt(ke)} тг</span></div>
+        <div class="bill-row ${kidsGap>0?'bad':'good'} strong"><span class="lbl">Доп. за дозаказ с родителя</span><span class="val">${kidsDozPP>0?'+'+fmt(kidsDozPP)+' тг/ребёнка':'0 тг'}</span></div>`
+        :`<div class="bill-row good strong"><span class="lbl">Доп. за детей с родителя</span><span class="val">0 тг — всё покрыто ✓</span></div>`}
       </div>
     </div>
     <div class="bill-block">
-      <div class="bill-header adult-hdr"><div class="bill-icon">🥂</div><div class="bill-title">Взрослый счёт</div><div class="bill-total adult-c">${fmt(aT)} тг</div></div>
+      <div class="bill-header adult-hdr"><div class="bill-icon">🥂</div><div class="bill-title">Взрослый счёт</div><div class="bill-total adult-c">${fmt(af)} тг</div></div>
       <div class="bill-rows">
-        <div class="bill-row"><span class="lbl">Еда взрослых</span><span class="val">${fmt(af)} тг</span></div>
-        <div class="bill-row"><span class="lbl">Воспитатели</span><span class="val">${fmt(tf)} тг</span></div>
-        <div class="bill-row"><span class="lbl">Прочее</span><span class="val">${fmt(mc)} тг</span></div>
-        <div class="bill-row good"><span class="lbl">Остаток из сбора</span><span class="val">−${fmt(sU)} тг</span></div>
-        <div class="bill-row ${aG>0?'bad':'good'} strong"><span class="lbl">Доп. с каждого взрослого (${adults} чел.)</span><span class="val">${aPP>0?'+'+fmt(aPP)+' тг':'Покрыто ✓'}</span></div>
+        <div class="bill-row"><span class="lbl">Общий счёт за стол взрослых</span><span class="val">${fmt(af)} тг</span></div>
+        <div class="bill-row"><span class="lbl">Взрослых пришло</span><span class="val">${adultCnt} чел.</span></div>
+        <div class="bill-row ${af>0?'bad':'good'} strong"><span class="lbl">С каждого взрослого</span><span class="val">${adultPP>0?fmt(adultPP)+' тг':'0 тг'}</span></div>
       </div>
     </div>
     <div class="final-card">
-      <div class="final-label">Итого доплата в день вечера</div>
-      <div class="final-amount">${tot>0?'+'+fmt(tot)+' тг':'Всё покрыто! 🎉'}</div>
-      <div class="final-sub">${tot>0?'дополнительно к уже сданным 15 000 тг':'Сбора хватило на всё — ура!'}</div>
+      <div class="final-label">Итого в день вечера с каждого родителя</div>
+      <div class="final-amount">${fmt(kidsExtraPP+adultPP)} тг</div>
+      <div class="final-sub">${kidsExtraPP>0?fmt(kidsDozPP)+' тг (дозаказ детям) + ':''} ${adultPP>0?fmt(adultPP)+' тг (взрослый стол)':'взрослый стол: оплачивается отдельно на месте'}</div>
     </div>`;
 }
 
@@ -451,10 +449,8 @@ function showPanel(name,btn){
   if(name==='split'){
     document.getElementById('kid-pkg').value=state.kidPkg;
     document.getElementById('kid-extra').value=state.kidExtra;
+    document.getElementById('adult-cnt').value=state.adultCnt||15;
     document.getElementById('adult-food').value=state.adultFood;
-    document.getElementById('teacher-cnt').value=state.teacherCnt;
-    document.getElementById('teacher-food').value=state.teacherFood;
-    document.getElementById('misc').value=state.misc;
     recalc();
   }
 }
