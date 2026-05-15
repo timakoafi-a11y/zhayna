@@ -1,0 +1,1082 @@
+<html lang="ru"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎓 Выпускной · Группа Жайна 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Comfortaa:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --p:#7C3AED; --p2:#9333EA; --pink:#EC4899; --orange:#F97316;
+  --green:#22C55E; --yellow:#EAB308; --blue:#3B82F6;
+  --dark:#18103A; --mid:#64537A; --muted:#A89BBE;
+  --bg:#F7F4FF; --white:#FFFFFF; --border:#E8E1F5;
+  --r:16px; --rs:10px;
+  --shadow:0 2px 12px rgba(124,58,237,.10);
+  --shadow-lg:0 8px 32px rgba(124,58,237,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
+
+/* ───── HERO ───── */
+.hero{
+  background:linear-gradient(150deg,#1A0845 0%,#4C1D95 45%,#7C3AED 75%,#C026D3 100%);
+  padding:2.5rem 1.25rem 0; text-align:center; position:relative; overflow:hidden;
+}
+/* subtle noise */
+.hero::before{
+  content:''; position:absolute; inset:0; pointer-events:none; opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+}
+/* glow blobs */
+.hero-blob1{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(192,38,211,.35),transparent 70%);top:-80px;left:-60px;pointer-events:none;}
+.hero-blob2{position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.25),transparent 70%);bottom:20px;right:-50px;pointer-events:none;}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:100px;padding:5px 16px;
+  font-size:.75rem;font-weight:800;color:rgba(255,255,255,.85);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;
+  position:relative;
+}
+.hero h1{
+  font-family:'Comfortaa',cursive;
+  font-size:clamp(2.4rem,7vw,4rem);
+  font-weight:700;color:#fff;
+  line-height:1.1;margin-bottom:.35rem;
+  position:relative;
+}
+.hero-sub{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:1.5rem;position:relative;}
+
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-bottom:1.75rem;position:relative;}
+.chip{
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:100px;padding:6px 14px;
+  font-size:.78rem;font-weight:700;color:rgba(255,255,255,.9);
+  transition:background .2s;
+}
+.chip:hover{background:rgba(255,255,255,.18);}
+
+/* glass stats */
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r) var(--r) 0 0;max-width:360px;margin:0 auto;
+  overflow:hidden;position:relative;
+}
+.hst{padding:.9rem .5rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);}
+.hst:last-child{border-right:none;}
+.hst-n{font-family:'Comfortaa',cursive;font-size:1.7rem;font-weight:700;color:#fff;line-height:1;}
+.hst-l{font-size:.6rem;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:3px;}
+
+/* ───── COUNTDOWN ───── */
+.cd-wrap{
+  background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.1);
+  padding:1.1rem 1.25rem 1.4rem;text-align:center;
+  background:linear-gradient(180deg,rgba(76,29,149,.0),rgba(76,29,149,1));
+}
+.cd-lbl{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.7rem;}
+.cd-row{display:flex;justify-content:center;align-items:center;gap:6px;}
+.cd-cell{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:.55rem .7rem;min-width:58px;text-align:center;
+}
+.cd-n{font-family:'Comfortaa',cursive;font-size:1.75rem;font-weight:700;color:#fff;line-height:1;display:block;transition:transform .15s;}
+.cd-n.pop{animation:cdpop .18s ease;}
+@keyframes cdpop{0%{transform:scale(.88);}60%{transform:scale(1.06);}100%{transform:scale(1);}}
+.cd-u{font-size:.55rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.cd-sep{font-family:'Comfortaa',cursive;font-size:1.5rem;color:rgba(255,255,255,.2);margin-bottom:14px;}
+.cd-done{display:none;font-family:'Comfortaa',cursive;font-size:1.3rem;font-weight:700;color:#FDE047;padding:.6rem 1.25rem;background:rgba(253,224,71,.1);border:1px solid rgba(253,224,71,.25);border-radius:12px;}
+
+/* ───── PROGRESS ───── */
+.prog-wrap{background:#4C1D95;padding:.1rem 1.25rem 1.25rem;}
+.prog-track{background:rgba(255,255,255,.12);border-radius:100px;height:10px;overflow:hidden;}
+.prog-fill{
+  height:100%;border-radius:100px;
+  background:linear-gradient(90deg,#FDE047,#F97316);
+  transition:width .7s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 0 10px rgba(249,115,22,.5);
+}
+.prog-labels{display:flex;justify-content:space-between;margin-top:7px;font-size:.72rem;color:rgba(255,255,255,.55);font-weight:700;}
+
+/* ───── TABS ───── */
+.tabs{
+  display:flex;background:var(--white);
+  border-bottom:1.5px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 12px rgba(124,58,237,.08);
+}
+.tab{
+  flex:1;padding:.9rem .5rem;text-align:center;
+  font-size:.8rem;font-weight:800;color:var(--muted);
+  cursor:pointer;border:none;background:transparent;
+  border-bottom:2.5px solid transparent;margin-bottom:-1.5px;
+  transition:all .18s;font-family:'Nunito',sans-serif;
+}
+.tab.active{color:var(--p);border-bottom-color:var(--p);}
+.tab:hover:not(.active){color:var(--mid);background:#FAF7FF;}
+
+/* ───── CONTENT ───── */
+.content{max-width:660px;margin:0 auto;padding:1.5rem 1rem 5.5rem;}
+.panel{display:none;}.panel.active{display:block;animation:fadeIn .25s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+.sec-title{
+  font-family:'Comfortaa',cursive;font-size:.88rem;font-weight:700;
+  color:var(--p);margin-bottom:1rem;
+  display:flex;align-items:center;gap:8px;
+}
+.sec-title::after{content:'';flex:1;height:1.5px;background:linear-gradient(90deg,var(--border),transparent);}
+
+/* ───── SUMMARY CARDS ───── */
+.scards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1.5rem;}
+@media(min-width:460px){.scards{grid-template-columns:repeat(4,1fr);}}
+.sc{
+  border-radius:var(--r);padding:.9rem 1rem;border:1.5px solid transparent;
+  transition:transform .2s,box-shadow .2s;
+}
+.sc:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+.sc-v{background:#F3E8FF;border-color:#DDD6FE;}
+.sc-g{background:#DCFCE7;border-color:#BBF7D0;}
+.sc-r{background:#FFE4F0;border-color:#FBCFE8;}
+.sc-y{background:#FEF9C3;border-color:#FDE68A;}
+.sc-lbl{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px;opacity:.7;}
+.sc-v .sc-lbl{color:var(--p);}
+.sc-g .sc-lbl{color:#15803D;}
+.sc-r .sc-lbl{color:#DB2777;}
+.sc-y .sc-lbl{color:#A16207;}
+.sc-val{font-family:'Comfortaa',cursive;font-size:1.1rem;font-weight:700;color:var(--dark);}
+.sc-sub{font-size:.62rem;color:var(--mid);margin-top:2px;font-weight:600;}
+
+/* ───── PAYER CARDS ───── */
+.plist{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem;}
+.pcard{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  box-shadow:var(--shadow);
+  overflow:hidden;transition:box-shadow .2s,border-color .2s;
+}
+.pcard:hover{box-shadow:var(--shadow-lg);}
+.pcard.full{border-color:#BBF7D0;}
+.pcard-top{display:flex;align-items:center;gap:11px;padding:.8rem 1rem;}
+.pav{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;font-weight:800;font-family:'Comfortaa',cursive;
+  flex-shrink:0;border:2px solid;transition:all .3s;
+}
+.pinfo{flex:1;min-width:0;}
+.pchild{font-size:.88rem;font-weight:800;color:var(--dark);}
+.pparent{
+  font-size:.75rem;font-weight:600;color:var(--muted);
+  border:none;background:transparent;width:100%;outline:none;padding:0;
+  font-family:'Nunito',sans-serif;margin-top:1px;
+}
+.pparent:focus{color:var(--p);}
+.pright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+.kadj{display:flex;align-items:center;gap:4px;}
+.kadjbtn{
+  width:22px;height:22px;border-radius:8px;
+  border:1.5px solid var(--border);background:var(--bg);
+  cursor:pointer;font-size:.9rem;color:var(--p);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;font-weight:700;
+}
+.kadjbtn:hover{background:var(--p);color:#fff;border-color:var(--p);}
+.kadjn{font-size:.75rem;font-weight:800;min-width:14px;text-align:center;}
+
+.sbadge{display:inline-block;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:100px;}
+.sb-yes{background:#DCFCE7;color:#15803D;}
+.sb-part{background:#FEF9C3;color:#A16207;}
+.sb-no{background:#FFE4F0;color:#BE185D;}
+
+/* pay row */
+.prow{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  padding:.65rem 1rem;
+  background:#FAFAFF;border-top:1.5px dashed var(--border);
+}
+.prow-lbl{font-size:.7rem;font-weight:800;color:var(--muted);white-space:nowrap;}
+.pinp-w{position:relative;flex:1;min-width:80px;max-width:130px;}
+.pinp{
+  width:100%;padding:5px 26px 5px 10px;
+  border:1.5px solid var(--border);border-radius:100px;
+  font-size:.82rem;font-weight:800;font-family:'Nunito',sans-serif;
+  color:var(--dark);outline:none;background:#fff;text-align:right;
+  transition:border-color .15s;
+}
+.pinp:focus{border-color:var(--p);}
+.pcur{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-size:.65rem;font-weight:700;color:var(--muted);pointer-events:none;}
+.pof{font-size:.68rem;color:var(--muted);white-space:nowrap;font-weight:600;}
+.pbar-w{flex:1;min-width:36px;height:6px;background:var(--border);border-radius:100px;overflow:hidden;}
+.pbar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--green),#86EFAC);transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+/* ─ BUTTONS ─ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  border-radius:100px;font-size:.75rem;font-weight:800;
+  cursor:pointer;border:1.5px solid;font-family:'Nunito',sans-serif;
+  transition:all .15s;white-space:nowrap;padding:6px 14px;
+}
+.btn-outline-orange{border-color:var(--orange);color:var(--orange);background:#FFF7ED;}
+.btn-outline-orange:hover{background:var(--orange);color:#fff;}
+.btn-solid-green{border-color:var(--green);color:var(--green);background:#F0FDF4;}
+.btn-add{
+  width:100%;padding:1rem;border:2px dashed var(--border);border-radius:var(--r);
+  background:transparent;color:var(--muted);font-size:.85rem;font-weight:800;
+  font-family:'Nunito',sans-serif;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .2s;margin-bottom:1.5rem;
+}
+.btn-add:hover{border-color:var(--p);color:var(--p);background:#FAF5FF;}
+
+/* ───── SPLIT ───── */
+.ig{margin-bottom:.85rem;}
+.il{font-size:.75rem;color:var(--mid);margin-bottom:4px;display:block;font-weight:800;}
+.irow{display:flex;gap:8px;}.irow .ig{flex:1;}
+.inp{
+  width:100%;padding:.65rem 1rem;
+  border:1.5px solid var(--border);border-radius:var(--rs);
+  font-size:.9rem;font-family:'Nunito',sans-serif;font-weight:700;
+  background:var(--white);color:var(--dark);outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+.inp:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(124,58,237,.1);}
+
+/* bill blocks */
+.bill{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r);overflow:hidden;margin-bottom:12px;
+  box-shadow:var(--shadow);
+}
+.bhdr{padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;}
+.bhdr.k{background:linear-gradient(135deg,#FFF7ED,#FDF2FF);border-bottom:1.5px solid #F3E8FF;}
+.bhdr.a{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-bottom:1.5px solid #E8E1F5;}
+.bico{font-size:1.4rem;}
+.btitle{font-family:'Comfortaa',cursive;font-size:.88rem;font-weight:700;color:var(--dark);}
+.btot{margin-left:auto;font-family:'Comfortaa',cursive;font-size:1rem;font-weight:700;}
+.btot.kc{color:var(--pink);}
+.btot.ac{color:var(--p);}
+.brows{padding:.3rem 0;}
+.br{display:flex;justify-content:space-between;padding:.45rem 1.1rem;font-size:.82rem;}
+.br .bl{color:var(--mid);font-weight:600;}
+.br .bv{font-weight:800;}
+.br.good .bv{color:#15803D;}
+.br.bad .bv{color:#DC2626;}
+.br.str{border-top:1.5px solid var(--border);}
+.br.str .bl{color:var(--dark);font-weight:700;}
+
+/* final card */
+.final-card{
+  border-radius:var(--r);overflow:hidden;margin-bottom:12px;
+  box-shadow:0 8px 28px rgba(124,58,237,.25);
+}
+.final-body{
+  background:linear-gradient(135deg,#4C1D95,#7C3AED 50%,#C026D3);
+  padding:1.75rem 1.5rem;text-align:center;
+}
+.final-lbl{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.5rem;}
+.final-amt{font-family:'Comfortaa',cursive;font-size:2.6rem;font-weight:700;color:#fff;line-height:1.1;margin-bottom:.3rem;}
+.final-sub{font-size:.8rem;color:rgba(255,255,255,.65);font-weight:600;}
+
+/* ───── INFO ───── */
+.icard{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.25rem;margin-bottom:10px;box-shadow:var(--shadow);}
+.icard h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;margin-bottom:.9rem;color:var(--dark);}
+.idet{display:flex;align-items:flex-start;gap:11px;margin-bottom:9px;font-size:.84rem;font-weight:600;color:var(--dark);}
+.idet .ico{font-size:1.1rem;flex-shrink:0;margin-top:.1rem;}
+.idet a{color:var(--p);text-decoration:none;}.idet a:hover{text-decoration:underline;}
+
+.event-banner{
+  background:linear-gradient(135deg,#3B0764,#7C3AED,#C026D3);
+  border-radius:var(--r);padding:1.5rem;margin-bottom:10px;
+  box-shadow:0 8px 24px rgba(124,58,237,.3);
+}
+.event-banner h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.9rem;}
+.event-banner .idet{color:rgba(255,255,255,.9);}
+.event-banner .idet a{color:#FDE047;}
+
+.gh-banner{
+  background:linear-gradient(135deg,#0F172A,#1E293B);
+  border-radius:var(--r);padding:1.5rem;margin-bottom:10px;
+  box-shadow:0 4px 18px rgba(0,0,0,.2);
+}
+.gh-banner h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;color:#F1F5F9;margin-bottom:.85rem;}
+.gh-banner ol{padding-left:1.25rem;}
+.gh-banner li{font-size:.83rem;line-height:1.8;color:#94A3B8;font-weight:600;margin-bottom:2px;}
+.gh-banner a{color:#FDE047;}
+.gh-banner strong{color:#E2E8F0;}
+
+/* ───── SAVE BAR ───── */
+.savebar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
+  border-top:1.5px solid var(--border);
+  padding:.7rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:200;
+}
+.save-info{font-size:.72rem;color:var(--muted);font-weight:700;}
+.save-info strong{color:var(--p);}
+.save-actions{display:flex;gap:7px;}
+.sbtn-dl{
+  padding:8px 16px;background:var(--bg);color:var(--p);
+  border:1.5px solid var(--border);border-radius:100px;
+  font-size:.76rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .15s;
+}
+.sbtn-dl:hover{background:var(--p);color:#fff;border-color:var(--p);}
+.sbtn-save{
+  padding:8px 20px;
+  background:linear-gradient(135deg,var(--p),var(--pink));
+  color:#fff;border:none;border-radius:100px;
+  font-size:.76rem;font-weight:800;font-family:'Nunito',sans-serif;
+  cursor:pointer;box-shadow:0 4px 14px rgba(124,58,237,.3);transition:opacity .15s;
+}
+.sbtn-save:hover{opacity:.88;}
+
+.toast{
+  position:fixed;top:74px;left:50%;
+  transform:translateX(-50%) translateY(-14px);
+  background:var(--dark);color:#FDE047;
+  padding:9px 20px;border-radius:100px;
+  font-size:.8rem;font-weight:800;
+  opacity:0;transition:all .25s;z-index:999;white-space:nowrap;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+canvas#cf{position:fixed;inset:0;pointer-events:none;z-index:998;display:none;}
+</style>
+</head>
+<body>
+<canvas id="cf"></canvas>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-tag">🌸 Группа Жайна · 2026 🌸</div>
+  <h1>Выпускной!</h1>
+  <p class="hero-sub">Детский сад · Последний звонок 🎓</p>
+  <div class="chips">
+    <div class="chip">📅 26 мая 2026</div>
+    <div class="chip">⏰ 18:00</div>
+    <div class="chip">📍 Кафе OiNA</div>
+    <div class="chip">🟦 Майнкрафт</div>
+    <div class="chip">🩷 Киси Миси</div>
+  </div>
+  <div class="hero-stats">
+    <div class="hst"><div class="hst-n" id="h-kids">16</div><div class="hst-l">детей</div></div>
+    <div class="hst"><div class="hst-n" id="h-paid">4/15</div><div class="hst-l">сдали</div></div>
+    <div class="hst"><div class="hst-n" id="h-sum">70</div><div class="hst-l">тыс. тг</div></div>
+  </div>
+  <div class="cd-wrap">
+    <div class="cd-lbl">⏳ До выпускного осталось</div>
+    <div class="cd-done" id="cd-done">🎉 Выпускной уже идёт!</div>
+    <div class="cd-row" id="cd-row">
+      <div class="cd-cell"><span class="cd-n pop" id="cd-d">11</span><div class="cd-u">дней</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n pop" id="cd-h">01</span><div class="cd-u">часов</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n pop" id="cd-m">50</span><div class="cd-u">минут</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n pop" id="cd-s">32</span><div class="cd-u">секунд</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog-wrap">
+  <div class="prog-track"><div class="prog-fill" id="pf" style="width: 29%;"></div></div>
+  <div class="prog-labels">
+    <span id="pl">Собрано 70&nbsp;000 из 240&nbsp;000 тг</span>
+    <span id="pp">29%</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="showPanel('collect',this)">💰 Сбор</button>
+  <button class="tab" onclick="showPanel('split',this)">📊 Счета</button>
+  <button class="tab" onclick="showPanel('info',this)">📋 Инфо</button>
+</div>
+
+<div class="content">
+
+  <!-- COLLECT -->
+  <div class="panel active" id="panel-collect">
+    <div class="scards" id="scards">
+    <div class="sc sc-v"><div class="sc-lbl">Всего к сбору</div><div class="sc-val">240&nbsp;000 тг</div><div class="sc-sub">16 дет. × 15 000</div></div>
+    <div class="sc sc-g"><div class="sc-lbl">Собрано</div><div class="sc-val">70&nbsp;000 тг</div><div class="sc-sub">4 полн. · 1 частично</div></div>
+    <div class="sc sc-r"><div class="sc-lbl">Осталось</div><div class="sc-val">170&nbsp;000 тг</div><div class="sc-sub">10 семей ждём</div></div>
+    <div class="sc sc-y"><div class="sc-lbl">Резерв взрослым</div><div class="sc-val">80&nbsp;000 тг</div><div class="sc-sub">5 000 × 16</div></div></div>
+    <div class="sec-title">🎓 Наши выпускники</div>
+    <div class="plist" id="plist"><div class="pcard full">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FFE4F0;border-color:#FB6FAB;color:#DB2777">✓</div>
+        <div class="pinfo">
+          <div class="pchild">🦁 Лана</div>
+          <input class="pparent" value="Мама Ланы" placeholder="Имя родителя" oninput="state.payers[0].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(0,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(0,1)">+</button>
+          </div>
+          <span class="sbadge sb-yes">✓ Полностью</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="15000" placeholder="0" oninput="setPaid(0,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:100%"></div></div>
+        <button class="btn btn-solid-green" onclick="setFull(0)">✓ Всё</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#F3E8FF;border-color:#C084FC;color:#7C3AED">П</div>
+        <div class="pinfo">
+          <div class="pchild">🐯 Платон</div>
+          <input class="pparent" value="Мама Платона" placeholder="Имя родителя" oninput="state.payers[1].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(1,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(1,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(1,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(1)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#DCFCE7;border-color:#4ADE80;color:#16A34A">М</div>
+        <div class="pinfo">
+          <div class="pchild">🐻 Миша</div>
+          <input class="pparent" value="Мама Миши" placeholder="Имя родителя" oninput="state.payers[2].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(2,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(2,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(2,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(2)">Всё сдал</button>
+      </div></div><div class="pcard full">
+      <div class="pcard-top">
+        <div class="pav" style="background:#DBEAFE;border-color:#60A5FA;color:#2563EB">✓</div>
+        <div class="pinfo">
+          <div class="pchild">🦊 Лея</div>
+          <input class="pparent" value="Мама Леи" placeholder="Имя родителя" oninput="state.payers[3].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(3,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(3,1)">+</button>
+          </div>
+          <span class="sbadge sb-yes">✓ Полностью</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="15000" placeholder="0" oninput="setPaid(3,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:100%"></div></div>
+        <button class="btn btn-solid-green" onclick="setFull(3)">✓ Всё</button>
+      </div></div><div class="pcard full">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FEF9C3;border-color:#FDE047;color:#A16207">✓</div>
+        <div class="pinfo">
+          <div class="pchild">🐼 Ева</div>
+          <input class="pparent" value="Мама Евы" placeholder="Имя родителя" oninput="state.payers[4].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(4,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(4,1)">+</button>
+          </div>
+          <span class="sbadge sb-yes">✓ Полностью</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="15000" placeholder="0" oninput="setPaid(4,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:100%"></div></div>
+        <button class="btn btn-solid-green" onclick="setFull(4)">✓ Всё</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FFEDD5;border-color:#FB923C;color:#EA580C">АП</div>
+        <div class="pinfo">
+          <div class="pchild">🐨 Алиса П</div>
+          <input class="pparent" value="Мама Алисы П" placeholder="Имя родителя" oninput="state.payers[5].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(5,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(5,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(5,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(5)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#E0F2FE;border-color:#38BDF8;color:#0284C7">З</div>
+        <div class="pinfo">
+          <div class="pchild">🐸 Забир</div>
+          <input class="pparent" value="Мама Забира" placeholder="Имя родителя" oninput="state.payers[6].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(6,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(6,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(6,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(6)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FCE7F3;border-color:#F472B6;color:#BE185D">Ж</div>
+        <div class="pinfo">
+          <div class="pchild">🦋 Жания</div>
+          <input class="pparent" value="Мама Жании" placeholder="Имя родителя" oninput="state.payers[7].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(7,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(7,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(7,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(7)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FFE4F0;border-color:#FB6FAB;color:#DB2777">ЕГ</div>
+        <div class="pinfo">
+          <div class="pchild">⭐ Егор Г</div>
+          <input class="pparent" value="Мама Егора Г" placeholder="Имя родителя" oninput="state.payers[8].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(8,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(8,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(8,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(8)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#F3E8FF;border-color:#C084FC;color:#7C3AED">М</div>
+        <div class="pinfo">
+          <div class="pchild">🎈 Мирон</div>
+          <input class="pparent" value="Мама Мирона" placeholder="Имя родителя" oninput="state.payers[9].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(9,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(9,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(9,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(9)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#DCFCE7;border-color:#4ADE80;color:#16A34A">ЕБ</div>
+        <div class="pinfo">
+          <div class="pchild">🦁 Егор Б</div>
+          <input class="pparent" value="Мама Егора Б" placeholder="Имя родителя" oninput="state.payers[10].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(10,-1)">−</button>
+            <span class="kadjn">2</span>
+            <button class="kadjbtn" onclick="adjK(10,1)">+</button>
+          </div>
+          <span class="sbadge sb-part">Частично 10&nbsp;000</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="30000" step="500" value="10000" placeholder="0" oninput="setPaid(10,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 30&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:33%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(10)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#DBEAFE;border-color:#60A5FA;color:#2563EB">М</div>
+        <div class="pinfo">
+          <div class="pchild">🐯 Маша</div>
+          <input class="pparent" value="Мама Маши" placeholder="Имя родителя" oninput="state.payers[11].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(11,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(11,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(11,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(11)">Всё сдал</button>
+      </div></div><div class="pcard full">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FEF9C3;border-color:#FDE047;color:#A16207">✓</div>
+        <div class="pinfo">
+          <div class="pchild">🐻 Давыд</div>
+          <input class="pparent" value="Мама Давыда" placeholder="Имя родителя" oninput="state.payers[12].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(12,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(12,1)">+</button>
+          </div>
+          <span class="sbadge sb-yes">✓ Полностью</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="15000" placeholder="0" oninput="setPaid(12,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:100%"></div></div>
+        <button class="btn btn-solid-green" onclick="setFull(12)">✓ Всё</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#FFEDD5;border-color:#FB923C;color:#EA580C">М</div>
+        <div class="pinfo">
+          <div class="pchild">🦊 Марк</div>
+          <input class="pparent" value="Мама Марка" placeholder="Имя родителя" oninput="state.payers[13].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(13,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(13,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(13,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(13)">Всё сдал</button>
+      </div></div><div class="pcard">
+      <div class="pcard-top">
+        <div class="pav" style="background:#E0F2FE;border-color:#38BDF8;color:#0284C7">Ю</div>
+        <div class="pinfo">
+          <div class="pchild">🐼 Юля</div>
+          <input class="pparent" value="Мама Юли" placeholder="Имя родителя" oninput="state.payers[14].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(14,-1)">−</button>
+            <span class="kadjn">1</span>
+            <button class="kadjbtn" onclick="adjK(14,1)">+</button>
+          </div>
+          <span class="sbadge sb-no">Не сдал</span>
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="15000" step="500" value="" placeholder="0" oninput="setPaid(14,+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из 15&nbsp;000</span>
+        <div class="pbar-w"><div class="pbar" style="width:0%"></div></div>
+        <button class="btn btn-outline-orange" onclick="setFull(14)">Всё сдал</button>
+      </div></div></div>
+    <button class="btn-add" onclick="addPayer()">＋ Добавить семью</button>
+  </div>
+
+  <!-- SPLIT -->
+  <div class="panel" id="panel-split">
+    <div class="sec-title">🍭 Детский счёт</div>
+    <div class="ig">
+      <label class="il">Пакет на ребёнка (тг)</label>
+      <input class="inp" type="number" id="kid-pkg" value="10000" oninput="save();recalc()">
+    </div>
+    <div class="ig">
+      <label class="il">Доп. заказ детям — итого (тг)</label>
+      <input class="inp" type="number" id="kid-extra" value="0" oninput="save();recalc()">
+    </div>
+    <div class="sec-title">🥂 Взрослый счёт</div>
+    <div class="irow">
+      <div class="ig">
+        <label class="il">Взрослых пришло (чел.)</label>
+        <input class="inp" type="number" id="adult-cnt" value="15" oninput="save();recalc()">
+      </div>
+      <div class="ig">
+        <label class="il">Общий счёт взрослых (тг)</label>
+        <input class="inp" type="number" id="adult-food" value="0" oninput="save();recalc()">
+      </div>
+    </div>
+    <div class="sec-title">✨ Итог</div>
+    <div id="bill-out"></div>
+  </div>
+
+  <!-- INFO -->
+  <div class="panel" id="panel-info">
+    <div class="event-banner">
+      <h3>📋 Детали мероприятия</h3>
+      <div class="idet"><span class="ico">📅</span><span>26 мая 2026, начало в <strong>18:00</strong></span></div>
+      <div class="idet"><span class="ico">📍</span><span>Кафе <strong>OiNA</strong>, ул. Тауелсиздик, 23<br><a href="https://2gis.kz/astana/search/OiNA" target="_blank">Открыть на карте →</a></span></div>
+      <div class="idet"><span class="ico">🟦</span><span>Аниматор: <strong>Майнкрафт</strong> (синий)</span></div>
+      <div class="idet"><span class="ico">🩷</span><span>Аниматор: <strong>Киси Миси</strong> (розовый)</span></div>
+      <div class="idet"><span class="ico">💰</span><span>Взнос: <strong>15 000 тг</strong> за ребёнка</span></div>
+    </div>
+    <div class="gh-banner">
+      <h3>🔄 Как обновить страницу для всех</h3>
+      <ol>
+        <li>Внесите данные → нажмите <strong>«⬇ HTML»</strong> внизу</li>
+        <li>Зайдите на <a href="https://github.com/timakoafi-a11y/zhayna" target="_blank">github.com/timakoafi-a11y/zhayna</a></li>
+        <li>Нажмите на файл → ✏️ → Upload file → новый файл</li>
+        <li>Нажмите <strong>Commit changes</strong> — через 1-2 мин обновится</li>
+      </ol>
+    </div>
+    <div class="icard">
+      <h3>Как работает сбор</h3>
+      <div class="idet"><span class="ico">1️⃣</span><span>Взнос <strong>15 000 тг</strong> за каждого ребёнка</span></div>
+      <div class="idet"><span class="ico">2️⃣</span><span>Можно сдавать частями — вводите сколько уже дали</span></div>
+      <div class="idet"><span class="ico">3️⃣</span><span>10 000 тг → пакет ребёнка · 5 000 тг → резерв</span></div>
+      <div class="idet"><span class="ico">4️⃣</span><span>После вечера заполните «Счета» — калькулятор всё посчитает</span></div>
+    </div>
+    <button class="btn-add" onclick="downloadHTML()">⬇️ Скачать HTML с моими данными</button>
+  </div>
+</div>
+
+<!-- SAVE BAR -->
+<div class="savebar">
+  <div class="save-info">Сохранено: <strong id="ls">16:09</strong></div>
+  <div class="save-actions">
+    <button class="sbtn-dl" onclick="downloadHTML()">⬇ HTML</button>
+    <button class="sbtn-save" onclick="saveManual()">💾 Сохранить</button>
+  </div>
+</div>
+<div class="toast show" id="toast">Сохранено ✓</div>
+
+<script>
+const COLLECT=15000,KID_BASE=10000;
+const AV=[
+  {bg:'#FFE4F0',b:'#FB6FAB',t:'#DB2777'},
+  {bg:'#F3E8FF',b:'#C084FC',t:'#7C3AED'},
+  {bg:'#DCFCE7',b:'#4ADE80',t:'#16A34A'},
+  {bg:'#DBEAFE',b:'#60A5FA',t:'#2563EB'},
+  {bg:'#FEF9C3',b:'#FDE047',t:'#A16207'},
+  {bg:'#FFEDD5',b:'#FB923C',t:'#EA580C'},
+  {bg:'#E0F2FE',b:'#38BDF8',t:'#0284C7'},
+  {bg:'#FCE7F3',b:'#F472B6',t:'#BE185D'},
+];
+const EM=['🦁','🐯','🐻','🦊','🐼','🐨','🐸','🦋','⭐','🎈'];
+const DEF=[
+  {child:'Лана',   name:'Мама Ланы',    kids:1,paid:0},
+  {child:'Платон', name:'Мама Платона', kids:1,paid:0},
+  {child:'Миша',   name:'Мама Миши',    kids:1,paid:0},
+  {child:'Лея',    name:'Мама Леи',     kids:1,paid:0},
+  {child:'Ева',    name:'Мама Евы',     kids:1,paid:0},
+  {child:'Алиса П',name:'Мама Алисы П', kids:1,paid:0},
+  {child:'Забир',  name:'Мама Забира',  kids:1,paid:0},
+  {child:'Жания',  name:'Мама Жании',   kids:1,paid:0},
+  {child:'Егор Г', name:'Мама Егора Г', kids:1,paid:0},
+  {child:'Мирон',  name:'Мама Мирона',  kids:1,paid:0},
+  {child:'Егор Б', name:'Мама Егора Б', kids:1,paid:0},
+  {child:'Маша',   name:'Мама Маши',    kids:1,paid:0},
+  {child:'Давыд',  name:'Мама Давыда',  kids:1,paid:0},
+  {child:'Марк',   name:'Мама Марка',   kids:1,paid:0},
+  {child:'Юля',    name:'Мама Юли',     kids:1,paid:0},
+];
+const _P={"payers":[{"child":"Лана","name":"Мама Ланы","kids":1,"paid":15000},{"child":"Платон","name":"Мама Платона","kids":1,"paid":0},{"child":"Миша","name":"Мама Миши","kids":1,"paid":0},{"child":"Лея","name":"Мама Леи","kids":1,"paid":15000},{"child":"Ева","name":"Мама Евы","kids":1,"paid":15000},{"child":"Алиса П","name":"Мама Алисы П","kids":1,"paid":0},{"child":"Забир","name":"Мама Забира","kids":1,"paid":0},{"child":"Жания","name":"Мама Жании","kids":1,"paid":0},{"child":"Егор Г","name":"Мама Егора Г","kids":1,"paid":0},{"child":"Мирон","name":"Мама Мирона","kids":1,"paid":0},{"child":"Егор Б","name":"Мама Егора Б","kids":2,"paid":10000},{"child":"Маша","name":"Мама Маши","kids":1,"paid":0},{"child":"Давыд","name":"Мама Давыда","kids":1,"paid":15000},{"child":"Марк","name":"Мама Марка","kids":1,"paid":0},{"child":"Юля","name":"Мама Юли","kids":1,"paid":0}],"kidPkg":10000,"kidExtra":0,"adultCnt":15,"adultFood":0};
+  let state={payers:DEF.map(p=>({...p})),kidPkg:10000,kidExtra:0,adultCnt:15,adultFood:0};
+
+function load(){try{const r=localStorage.getItem('zhayna_v6');if(r){const d=JSON.parse(r);state={...state,...d};}}catch(e){}}
+function save(){
+  try{
+    state.kidPkg=+(document.getElementById('kid-pkg')?.value||10000);
+    state.kidExtra=+(document.getElementById('kid-extra')?.value||0);
+    state.adultCnt=+(document.getElementById('adult-cnt')?.value||15);
+    state.adultFood=+(document.getElementById('adult-food')?.value||0);
+    localStorage.setItem('zhayna_v6',JSON.stringify(state));
+    const n=new Date();
+    document.getElementById('ls').textContent=
+      n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
+  }catch(e){}
+}
+function saveManual(){save();toast('Сохранено ✓');}
+function fmt(n){return Math.round(n).toLocaleString('ru-RU');}
+function totalKids(){return state.payers.reduce((s,p)=>s+p.kids,0);}
+function paidAmt(p){return Math.min(p.paid||0,p.kids*COLLECT);}
+function isFull(p){return paidAmt(p)>=p.kids*COLLECT;}
+function av(i){return AV[i%AV.length];}
+function em(i){return EM[i%EM.length];}
+function initials(c){const p=c.trim().split(' ');return(p[0][0]+(p[1]?p[1][0]:'')).toUpperCase();}
+
+function renderTop(){
+  const kids=totalKids(),adults=state.payers.length;
+  const fc=state.payers.filter(p=>isFull(p)).length;
+  const col=state.payers.reduce((s,p)=>s+paidAmt(p),0);
+  const tot=kids*COLLECT,pct=tot>0?Math.min(100,Math.round(col/tot*100)):0;
+  document.getElementById('h-kids').textContent=kids;
+  document.getElementById('h-paid').textContent=fc+'/'+adults;
+  document.getElementById('h-sum').textContent=Math.round(col/1000);
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pp').textContent=pct+'%';
+  document.getElementById('pl').textContent=col>=tot?'🎉 Все сдали! Ура!':`Собрано ${fmt(col)} из ${fmt(tot)} тг`;
+  if(pct===100)confetti();
+}
+
+function renderCards(){
+  const kids=totalKids(),tot=kids*COLLECT;
+  const col=state.payers.reduce((s,p)=>s+paidAmt(p),0);
+  const fc=state.payers.filter(p=>isFull(p)).length;
+  const pc=state.payers.filter(p=>paidAmt(p)>0&&!isFull(p)).length;
+  const wc=state.payers.filter(p=>paidAmt(p)<=0).length;
+  document.getElementById('scards').innerHTML=`
+    <div class="sc sc-v"><div class="sc-lbl">Всего к сбору</div><div class="sc-val">${fmt(tot)} тг</div><div class="sc-sub">${kids} дет. × 15 000</div></div>
+    <div class="sc sc-g"><div class="sc-lbl">Собрано</div><div class="sc-val">${fmt(col)} тг</div><div class="sc-sub">${fc} полн. · ${pc} частично</div></div>
+    <div class="sc sc-r"><div class="sc-lbl">Осталось</div><div class="sc-val">${fmt(tot-col)} тг</div><div class="sc-sub">${wc} семей ждём</div></div>
+    <div class="sc sc-y"><div class="sc-lbl">Резерв взрослым</div><div class="sc-val">${fmt((COLLECT-KID_BASE)*kids)} тг</div><div class="sc-sub">5 000 × ${kids}</div></div>`;
+}
+
+function renderList(){
+  const el=document.getElementById('plist');
+  el.innerHTML='';
+  state.payers.forEach((p,i)=>{
+    const c=av(i),due=p.kids*COLLECT,got=paidAmt(p);
+    const pct=due>0?Math.min(100,Math.round(got/due*100)):0;
+    const full=got>=due;
+    const d=document.createElement('div');
+    d.className='pcard'+(full?' full':'');
+    d.innerHTML=`
+      <div class="pcard-top">
+        <div class="pav" style="background:${c.bg};border-color:${c.b};color:${c.t}">${full?'✓':initials(p.child)}</div>
+        <div class="pinfo">
+          <div class="pchild">${em(i)} ${p.child}</div>
+          <input class="pparent" value="${p.name}" placeholder="Имя родителя" oninput="state.payers[${i}].name=this.value;save();">
+        </div>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(${i},-1)">−</button>
+            <span class="kadjn">${p.kids}</span>
+            <button class="kadjbtn" onclick="adjK(${i},1)">+</button>
+          </div>
+          ${full?'<span class="sbadge sb-yes">✓ Полностью</span>':got>0?`<span class="sbadge sb-part">Частично ${fmt(got)}</span>`:'<span class="sbadge sb-no">Не сдал</span>'}
+        </div>
+      </div>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="${due}" step="500" value="${got||''}" placeholder="0" oninput="setPaid(${i},+this.value)">
+          <span class="pcur">тг</span>
+        </div>
+        <span class="pof">из ${fmt(due)}</span>
+        <div class="pbar-w"><div class="pbar" style="width:${pct}%"></div></div>
+        <button class="btn ${full?'btn-solid-green':'btn-outline-orange'}" onclick="setFull(${i})">${full?'✓ Всё':'Всё сдал'}</button>
+      </div>`;
+    el.appendChild(d);
+  });
+  renderTop();renderCards();
+}
+
+function setPaid(i,v){
+  const was=isFull(state.payers[i]);
+  state.payers[i].paid=Math.min(Math.max(0,v),state.payers[i].kids*COLLECT);
+  save();renderList();
+  if(!was&&isFull(state.payers[i]))toast('🎉 '+state.payers[i].child+' — сдал всё!');
+}
+function setFull(i){state.payers[i].paid=state.payers[i].kids*COLLECT;save();renderList();toast('🎉 '+state.payers[i].child+' — сдал всё!');}
+function adjK(i,d){state.payers[i].kids=Math.max(1,state.payers[i].kids+d);save();renderList();}
+function addPayer(){state.payers.push({child:'Новый',name:'Имя родителя',kids:1,paid:0});save();renderList();setTimeout(()=>{const it=document.querySelectorAll('.pcard');it[it.length-1]?.scrollIntoView({behavior:'smooth',block:'center'});},100);}
+
+function recalc(){
+  const kids=totalKids();
+  const kp=+(document.getElementById('kid-pkg')?.value||state.kidPkg);
+  const ke=+(document.getElementById('kid-extra')?.value||state.kidExtra);
+  const ac=+(document.getElementById('adult-cnt')?.value||state.adultCnt);
+  const af=+(document.getElementById('adult-food')?.value||state.adultFood);
+  const kT=kids*kp+ke,kC=kids*KID_BASE;
+  const doz=kids>0?Math.ceil(ke/kids):0;
+  const aPP=ac>0?Math.ceil(af/ac):0;
+  const out=document.getElementById('bill-out');
+  if(!out)return;
+  out.innerHTML=`
+    <div class="bill">
+      <div class="bhdr k"><div class="bico">🍭</div><div class="btitle">Детский счёт</div><div class="btot kc">${fmt(kT)} тг</div></div>
+      <div class="brows">
+        <div class="br"><span class="bl">Пакеты (${kids} × ${fmt(kp)} тг)</span><span class="bv">${fmt(kids*kp)} тг</span></div>
+        <div class="br good"><span class="bl">Покрыто из сбора</span><span class="bv">−${fmt(kC)} тг</span></div>
+        ${ke>0?`<div class="br"><span class="bl">Доп. заказ детям</span><span class="bv">${fmt(ke)} тг</span></div>
+        <div class="br bad str"><span class="bl">Доп. с родителя за дозаказ</span><span class="bv">+${fmt(doz)} тг</span></div>`
+        :`<div class="br good str"><span class="bl">Доп. с родителя</span><span class="bv">0 тг — покрыто ✓</span></div>`}
+      </div>
+    </div>
+    <div class="bill">
+      <div class="bhdr a"><div class="bico">🥂</div><div class="btitle">Взрослый счёт</div><div class="btot ac">${fmt(af)} тг</div></div>
+      <div class="brows">
+        <div class="br"><span class="bl">Общий счёт взрослых</span><span class="bv">${fmt(af)} тг</span></div>
+        <div class="br"><span class="bl">Взрослых пришло</span><span class="bv">${ac} чел.</span></div>
+        <div class="br ${af>0?'bad':''} str"><span class="bl">С каждого взрослого</span><span class="bv">${aPP>0?fmt(aPP)+' тг':'0 тг'}</span></div>
+      </div>
+    </div>
+    <div class="final-card">
+      <div class="final-body">
+        <div class="final-lbl">Итого с родителя в день вечера</div>
+        <div class="final-amt">${fmt(doz+aPP)} тг</div>
+        <div class="final-sub">${doz>0?fmt(doz)+' тг дозаказ детей':''}${doz>0&&aPP>0?' + ':''}${aPP>0?fmt(aPP)+' тг взрослый стол':doz===0&&aPP===0?'Всё покрыто из сбора 🎉':''}</div>
+      </div>
+    </div>`;
+}
+
+function showPanel(name,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  btn.classList.add('active');
+  if(name==='split'){
+    document.getElementById('kid-pkg').value=state.kidPkg;
+    document.getElementById('kid-extra').value=state.kidExtra;
+    document.getElementById('adult-cnt').value=state.adultCnt;
+    document.getElementById('adult-food').value=state.adultFood;
+    recalc();
+  }
+}
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+
+/* countdown */
+function updateCD(){
+  const diff=new Date('2026-05-26T18:00:00')-new Date();
+  if(diff<=0){document.getElementById('cd-row').style.display='none';document.getElementById('cd-done').style.display='block';return;}
+  const set=(id,v)=>{const el=document.getElementById(id),s=String(v).padStart(2,'0');if(el.textContent!==s){el.textContent=s;el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');}};
+  set('cd-d',Math.floor(diff/86400000));
+  set('cd-h',Math.floor(diff%86400000/3600000));
+  set('cd-m',Math.floor(diff%3600000/60000));
+  set('cd-s',Math.floor(diff%60000/1000));
+}
+
+/* confetti */
+function confetti(){
+  const c=document.getElementById('cf');c.style.display='block';
+  c.width=innerWidth;c.height=innerHeight;
+  const ctx=c.getContext('2d');
+  const cols=['#FF6B9D','#A855F7','#FDE047','#22C55E','#38BDF8','#FB923C'];
+  const ps=Array.from({length:100},()=>({x:Math.random()*c.width,y:-20,r:Math.random()*5+2,c:cols[Math.floor(Math.random()*cols.length)],vx:(Math.random()-.5)*4,vy:Math.random()*3+2,rot:Math.random()*360,vr:(Math.random()-.5)*6}));
+  let f=0;
+  (function draw(){ctx.clearRect(0,0,c.width,c.height);ps.forEach(p=>{ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(0,0,p.r,0,Math.PI*2);ctx.fill();ctx.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=.06;});f++;if(f<200)requestAnimationFrame(draw);else{ctx.clearRect(0,0,c.width,c.height);c.style.display='none';}})();
+}
+
+/* download */
+function downloadHTML(){
+  save();
+  const st=JSON.stringify(state);
+  let h=document.documentElement.outerHTML;
+  h=h.replace('let state={',`const _P=${st};\n  let state={`).replace('state={...state,..._P};','state={...state,..._P};');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));
+  a.download='vypusknoy-zhayna.html';a.click();
+}
+
+load();renderList();updateCD();
+setInterval(updateCD,1000);setInterval(save,30000);
+</script>
+
+
+</body></html>
