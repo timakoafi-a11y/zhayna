@@ -3,192 +3,398 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Выпускной 🎓 Группа Жайна 2025</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Comfortaa:wght@400;600;700&display=swap" rel="stylesheet">
+<title>🎓 Выпускной · Группа Жайна 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Comfortaa:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#FF6B9D;--purple:#A855F7;--blue:#3B82F6;--cyan:#06B6D4;--green:#22C55E;--yellow:#FACC15;--orange:#FB923C;--red:#EF4444;--bg:#FFF8FF;--white:#FFFFFF;--dark:#1E1033;--mid:#6B5A8E;--border:#EDE0FF;--radius:18px;--radius-sm:12px;}
+:root{
+  --p:#7C3AED; --p2:#9333EA; --pink:#EC4899; --orange:#F97316;
+  --green:#22C55E; --yellow:#EAB308; --blue:#3B82F6;
+  --dark:#18103A; --mid:#64537A; --muted:#A89BBE;
+  --bg:#F7F4FF; --white:#FFFFFF; --border:#E8E1F5;
+  --r:16px; --rs:10px;
+  --shadow:0 2px 12px rgba(124,58,237,.10);
+  --shadow-lg:0 8px 32px rgba(124,58,237,.18);
+}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--dark);min-height:100vh;}
-.hero{background:linear-gradient(135deg,#7C3AED 0%,#DB2777 50%,#F59E0B 100%);padding:2.5rem 1.5rem 1.5rem;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='3' fill='rgba(255,255,255,0.12)'/%3E%3Ccircle cx='45' cy='45' r='2' fill='rgba(255,255,255,0.1)'/%3E%3Ccircle cx='45' cy='15' r='4' fill='rgba(255,255,255,0.08)'/%3E%3Ccircle cx='15' cy='45' r='2.5' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E") repeat;pointer-events:none;}
-.hero-emoji{font-size:2.8rem;line-height:1;margin-bottom:.5rem;}
-.hero h1{font-family:'Comfortaa',cursive;font-size:clamp(1.8rem,6vw,3rem);font-weight:700;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.2);line-height:1.15;margin-bottom:.25rem;}
-.hero-group{display:inline-block;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.4);border-radius:100px;padding:4px 16px;font-size:.85rem;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:1rem;}
-.event-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:1.25rem;}
-.event-chip{background:rgba(255,255,255,.18);border:1.5px solid rgba(255,255,255,.35);border-radius:100px;padding:5px 14px;font-size:.78rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:5px;}
-.hero-stats{display:flex;justify-content:center;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.3);border-radius:var(--radius);overflow:hidden;max-width:360px;margin:0 auto;}
-.hero-stat{flex:1;padding:.75rem .5rem;text-align:center;border-right:1px solid rgba(255,255,255,.2);}
-.hero-stat:last-child{border-right:none;}
-.hero-stat-num{font-family:'Comfortaa',cursive;font-size:1.6rem;font-weight:700;color:#fff;display:block;line-height:1;}
-.hero-stat-lbl{font-size:.65rem;color:rgba(255,255,255,.8);margin-top:3px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;}
-.countdown-wrap{background:linear-gradient(135deg,#7C3AED,#DB2777);padding:0 1.5rem 1rem;text-align:center;}
-.countdown-label{font-size:.7rem;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem;}
-.countdown-boxes{display:flex;justify-content:center;gap:8px;margin-bottom:.75rem;}
-.cd-box{background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);border-radius:12px;padding:.5rem .7rem;min-width:58px;text-align:center;}
-.cd-num{font-family:'Comfortaa',cursive;font-size:1.8rem;font-weight:700;color:#fff;line-height:1;display:block;}
-.cd-unit{font-size:.6rem;font-weight:700;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;}
-.cd-sep{font-family:'Comfortaa',cursive;font-size:1.8rem;font-weight:700;color:rgba(255,255,255,.4);align-self:center;padding-bottom:12px;}
-.cd-done{font-family:'Comfortaa',cursive;font-size:1.4rem;font-weight:700;color:#FACC15;padding:.6rem 1rem;background:rgba(255,255,255,.15);border-radius:12px;border:1.5px solid rgba(255,255,255,.3);display:inline-block;margin-bottom:.75rem;}
-.prog-wrap{background:linear-gradient(135deg,#7C3AED,#DB2777);padding:0 1.5rem 1.5rem;}
-.prog-track{background:rgba(255,255,255,.2);border-radius:100px;height:12px;overflow:hidden;}
-.prog-fill{height:100%;background:linear-gradient(90deg,#FACC15,#FB923C,#fff);border-radius:100px;transition:width .6s cubic-bezier(.4,0,.2,1);}
-.prog-labels{display:flex;justify-content:space-between;margin-top:6px;font-size:.72rem;color:rgba(255,255,255,.8);font-weight:600;}
-.tabs{display:flex;background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:0;z-index:100;}
-.tab{flex:1;padding:1rem .5rem;text-align:center;font-size:.82rem;font-weight:700;color:var(--mid);cursor:pointer;border:none;background:transparent;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;font-family:'Nunito',sans-serif;}
-.tab.active{color:var(--purple);border-bottom-color:var(--purple);}
-.tab:hover:not(.active){background:#FAF5FF;}
-.content{max-width:680px;margin:0 auto;padding:1.25rem 1rem 5rem;}
-.panel{display:none;}.panel.active{display:block;}
-.sec-title{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;color:var(--purple);margin-bottom:.9rem;display:flex;align-items:center;gap:8px;}
-.sec-title::after{content:'';flex:1;height:2px;background:var(--border);border-radius:2px;}
-.mini-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem;}
-.mini-card{border-radius:var(--radius-sm);padding:1rem;border:2px solid transparent;}
-.mc-purple{background:#F3E8FF;border-color:#DDD6FE;}
-.mc-pink{background:#FFE4F0;border-color:#FBCFE8;}
-.mc-green{background:#DCFCE7;border-color:#BBF7D0;}
-.mc-yellow{background:#FEF9C3;border-color:#FDE68A;}
-.mini-card-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px;}
-.mc-purple .mini-card-lbl{color:var(--purple);}
-.mc-pink .mini-card-lbl{color:var(--pink);}
-.mc-green .mini-card-lbl{color:var(--green);}
-.mc-yellow .mini-card-lbl{color:#B45309;}
-.mini-card-val{font-family:'Comfortaa',cursive;font-size:1.2rem;font-weight:700;color:var(--dark);}
-.mini-card-sub{font-size:.68rem;color:var(--mid);margin-top:3px;font-weight:600;}
-.payer-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem;}
-.payer-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius-sm);padding:.85rem 1rem;transition:all .2s;}
-.payer-card:hover{border-color:#C4B5FD;}
-.payer-card.fully-paid{opacity:.58;}
-.payer-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.payer-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Comfortaa',cursive;font-size:.85rem;font-weight:700;flex-shrink:0;border:2.5px solid;}
-.payer-info{flex:1;min-width:0;}
-.payer-child{font-size:.82rem;font-weight:800;color:var(--dark);}
-.payer-name-input{font-family:'Nunito',sans-serif;font-size:.76rem;font-weight:600;color:var(--mid);border:none;background:transparent;width:100%;outline:none;padding:0;}
-.payer-name-input:focus{color:var(--purple);}
-.payer-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
-.kids-adj{display:flex;align-items:center;gap:3px;}
-.adj-btn{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);background:#FAF5FF;cursor:pointer;font-size:.85rem;color:var(--purple);display:flex;align-items:center;justify-content:center;}
-.adj-btn:hover{background:var(--purple);color:#fff;border-color:var(--purple);}
-.adj-num{font-size:.75rem;font-weight:700;min-width:12px;text-align:center;color:var(--dark);}
-.status-badge{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:100px;white-space:nowrap;}
-.sb-full{background:#DCFCE7;color:#16A34A;}
-.sb-partial{background:#FEF9C3;color:#A16207;}
-.sb-none{background:#FFE4F0;color:#DB2777;}
 
-/* PAYMENT ROW */
-.pay-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:8px;border-top:2px dashed var(--border);}
-.pay-label{font-size:.72rem;font-weight:700;color:var(--mid);white-space:nowrap;}
-.pay-input-wrap{position:relative;flex:1;min-width:90px;max-width:150px;}
-.pay-input{width:100%;padding:6px 32px 6px 10px;border:2px solid var(--border);border-radius:100px;font-size:.82rem;font-weight:700;font-family:'Nunito',sans-serif;color:var(--dark);outline:none;background:var(--bg);text-align:right;}
-.pay-input:focus{border-color:var(--purple);}
-.pay-curr{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:.7rem;font-weight:700;color:var(--mid);pointer-events:none;}
-.pay-of{font-size:.7rem;color:var(--mid);white-space:nowrap;font-weight:600;}
-.pay-bar-wrap{flex:1;min-width:50px;height:7px;background:var(--border);border-radius:100px;overflow:hidden;}
-.pay-bar{height:100%;border-radius:100px;background:linear-gradient(90deg,#22C55E,#86EFAC);transition:width .4s;}
-.btn-full{padding:5px 12px;border-radius:100px;font-size:.72rem;font-weight:800;cursor:pointer;border:2px solid;font-family:'Nunito',sans-serif;transition:all .15s;white-space:nowrap;}
-.btn-full.waiting{border-color:var(--orange);color:var(--orange);background:#FFF7ED;}
-.btn-full.waiting:hover{background:var(--orange);color:#fff;}
-.btn-full.done{border-color:var(--green);color:var(--green);background:#F0FDF4;}
+/* ───── HERO ───── */
+.hero{
+  background:linear-gradient(150deg,#1A0845 0%,#4C1D95 45%,#7C3AED 75%,#C026D3 100%);
+  padding:2.5rem 1.25rem 0; text-align:center; position:relative; overflow:hidden;
+}
+/* subtle noise */
+.hero::before{
+  content:''; position:absolute; inset:0; pointer-events:none; opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+}
+/* glow blobs */
+.hero-blob1{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(192,38,211,.35),transparent 70%);top:-80px;left:-60px;pointer-events:none;}
+.hero-blob2{position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,.25),transparent 70%);bottom:20px;right:-50px;pointer-events:none;}
 
-.add-btn{width:100%;padding:.9rem;border:2.5px dashed var(--border);border-radius:var(--radius-sm);background:transparent;color:var(--mid);font-size:.85rem;font-weight:700;font-family:'Nunito',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;margin-bottom:1.5rem;}
-.add-btn:hover{border-color:var(--purple);color:var(--purple);background:#FAF5FF;}
-.input-group{margin-bottom:.9rem;}
-.input-label{font-size:.78rem;color:var(--mid);margin-bottom:5px;display:block;font-weight:700;}
-.inp{width:100%;padding:.65rem .9rem;border:2px solid var(--border);border-radius:var(--radius-sm);font-size:.9rem;font-family:'Nunito',sans-serif;background:var(--white);color:var(--dark);outline:none;transition:border-color .15s;font-weight:600;}
-.inp:focus{border-color:var(--purple);}
-.inp-row{display:flex;gap:8px;}
-.inp-row .input-group{flex:1;}
-.bill-block{background:var(--white);border:2px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;}
-.bill-header{padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;}
-.bill-header.kids-hdr{background:linear-gradient(135deg,#FFF7ED,#FFE4F0);border-bottom:2px solid #FBCFE8;}
-.bill-header.adult-hdr{background:linear-gradient(135deg,#EFF6FF,#F3E8FF);border-bottom:2px solid #DDD6FE;}
-.bill-icon{font-size:1.5rem;}
-.bill-title{font-family:'Comfortaa',cursive;font-size:.88rem;font-weight:700;color:var(--dark);}
-.bill-total{margin-left:auto;font-family:'Comfortaa',cursive;font-size:1rem;font-weight:700;}
-.bill-total.kids-c{color:var(--pink);}
-.bill-total.adult-c{color:var(--purple);}
-.bill-rows{padding:.4rem 0;}
-.bill-row{display:flex;justify-content:space-between;padding:.45rem 1.1rem;font-size:.82rem;}
-.bill-row .lbl{color:var(--mid);font-weight:600;}
-.bill-row .val{font-weight:700;}
-.bill-row.good .val{color:var(--green);}
-.bill-row.bad .val{color:var(--red);}
-.bill-row.strong{font-weight:700;border-top:2px solid var(--border);}
-.bill-row.strong .lbl{color:var(--dark);font-weight:700;}
-.final-card{border-radius:var(--radius);padding:1.5rem;text-align:center;margin-bottom:1rem;background:linear-gradient(135deg,#7C3AED,#DB2777,#F59E0B);position:relative;overflow:hidden;}
-.final-card::before{content:'🎉 🎊 🌟 🎈 ✨';position:absolute;top:8px;left:0;right:0;text-align:center;font-size:1rem;opacity:.3;letter-spacing:6px;}
-.final-label{font-size:.72rem;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:700;}
-.final-amount{font-family:'Comfortaa',cursive;font-size:2.2rem;font-weight:700;color:#fff;margin-bottom:4px;}
-.final-sub{font-size:.82rem;color:rgba(255,255,255,.8);font-weight:600;}
-.info-card{background:var(--white);border:2px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:12px;}
-.info-card h3{font-family:'Comfortaa',cursive;font-size:.88rem;margin-bottom:.75rem;color:var(--dark);}
-.info-card p,.info-card li{font-size:.85rem;line-height:1.7;color:var(--mid);font-weight:600;}
-.info-card ol{padding-left:1.25rem;}
-.info-card ol li{margin-bottom:4px;}
-.event-info-card{background:linear-gradient(135deg,#FFF7ED,#FFE4F0);border:2px solid #FBCFE8;border-radius:var(--radius);padding:1.25rem;margin-bottom:12px;}
-.event-info-card h3{font-family:'Comfortaa',cursive;font-size:.9rem;margin-bottom:.9rem;color:var(--dark);}
-.event-detail{display:flex;align-items:flex-start;gap:10px;margin-bottom:9px;font-size:.85rem;font-weight:600;color:var(--dark);}
-.event-detail span:first-child{font-size:1.1rem;flex-shrink:0;line-height:1.3;}
-.event-detail a{color:var(--purple);text-decoration:none;}
-.event-detail a:hover{text-decoration:underline;}
-.netlify-box{border-radius:var(--radius);padding:1.25rem;margin-bottom:12px;background:linear-gradient(135deg,#7C3AED,#4F46E5);}
-.netlify-box h3{font-family:'Comfortaa',cursive;font-size:.88rem;color:#fff;margin-bottom:.75rem;}
-.netlify-box p,.netlify-box li{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.85);font-weight:600;}
-.netlify-box ol{padding-left:1.25rem;}
-.netlify-box ol li{margin-bottom:4px;}
-.netlify-box a{color:#FACC15;}
-.save-banner{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:2px solid var(--border);padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:200;}
-.save-info{font-size:.75rem;color:var(--mid);font-weight:600;}
-.save-info strong{color:var(--purple);}
-.btn-dl{padding:9px 16px;background:#F3E8FF;color:var(--purple);border:2px solid #DDD6FE;border-radius:100px;font-size:.8rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .15s;}
-.btn-dl:hover{background:var(--purple);color:#fff;border-color:var(--purple);}
-.btn-save{padding:9px 20px;background:linear-gradient(135deg,var(--purple),var(--pink));color:#fff;border:none;border-radius:100px;font-size:.8rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:opacity .15s;}
-.btn-save:hover{opacity:.88;}
-.toast{position:fixed;top:80px;left:50%;transform:translateX(-50%) translateY(-16px);background:var(--dark);color:#FACC15;padding:10px 20px;border-radius:100px;font-size:.82rem;font-weight:700;opacity:0;transition:all .3s;z-index:999;white-space:nowrap;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  border-radius:100px;padding:5px 16px;
+  font-size:.75rem;font-weight:800;color:rgba(255,255,255,.85);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;
+  position:relative;
+}
+.hero h1{
+  font-family:'Comfortaa',cursive;
+  font-size:clamp(2.4rem,7vw,4rem);
+  font-weight:700;color:#fff;
+  line-height:1.1;margin-bottom:.35rem;
+  position:relative;
+}
+.hero-sub{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.55);margin-bottom:1.5rem;position:relative;}
+
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-bottom:1.75rem;position:relative;}
+.chip{
+  display:flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:100px;padding:6px 14px;
+  font-size:.78rem;font-weight:700;color:rgba(255,255,255,.9);
+  transition:background .2s;
+}
+.chip:hover{background:rgba(255,255,255,.18);}
+
+/* glass stats */
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r) var(--r) 0 0;max-width:360px;margin:0 auto;
+  overflow:hidden;position:relative;
+}
+.hst{padding:.9rem .5rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);}
+.hst:last-child{border-right:none;}
+.hst-n{font-family:'Comfortaa',cursive;font-size:1.7rem;font-weight:700;color:#fff;line-height:1;}
+.hst-l{font-size:.6rem;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:3px;}
+
+/* ───── COUNTDOWN ───── */
+.cd-wrap{
+  background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.1);
+  padding:1.1rem 1.25rem 1.4rem;text-align:center;
+  background:linear-gradient(180deg,rgba(76,29,149,.0),rgba(76,29,149,1));
+}
+.cd-lbl{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.7rem;}
+.cd-row{display:flex;justify-content:center;align-items:center;gap:6px;}
+.cd-cell{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:12px;padding:.55rem .7rem;min-width:58px;text-align:center;
+}
+.cd-n{font-family:'Comfortaa',cursive;font-size:1.75rem;font-weight:700;color:#fff;line-height:1;display:block;transition:transform .15s;}
+.cd-n.pop{animation:cdpop .18s ease;}
+@keyframes cdpop{0%{transform:scale(.88);}60%{transform:scale(1.06);}100%{transform:scale(1);}}
+.cd-u{font-size:.55rem;font-weight:800;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.cd-sep{font-family:'Comfortaa',cursive;font-size:1.5rem;color:rgba(255,255,255,.2);margin-bottom:14px;}
+.cd-done{display:none;font-family:'Comfortaa',cursive;font-size:1.3rem;font-weight:700;color:#FDE047;padding:.6rem 1.25rem;background:rgba(253,224,71,.1);border:1px solid rgba(253,224,71,.25);border-radius:12px;}
+
+/* ───── PROGRESS ───── */
+.prog-wrap{background:#4C1D95;padding:.1rem 1.25rem 1.25rem;}
+.prog-track{background:rgba(255,255,255,.12);border-radius:100px;height:10px;overflow:hidden;}
+.prog-fill{
+  height:100%;border-radius:100px;
+  background:linear-gradient(90deg,#FDE047,#F97316);
+  transition:width .7s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 0 10px rgba(249,115,22,.5);
+}
+.prog-labels{display:flex;justify-content:space-between;margin-top:7px;font-size:.72rem;color:rgba(255,255,255,.55);font-weight:700;}
+
+/* ───── TABS ───── */
+.tabs{
+  display:flex;background:var(--white);
+  border-bottom:1.5px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 12px rgba(124,58,237,.08);
+}
+.tab{
+  flex:1;padding:.9rem .5rem;text-align:center;
+  font-size:.8rem;font-weight:800;color:var(--muted);
+  cursor:pointer;border:none;background:transparent;
+  border-bottom:2.5px solid transparent;margin-bottom:-1.5px;
+  transition:all .18s;font-family:'Nunito',sans-serif;
+}
+.tab.active{color:var(--p);border-bottom-color:var(--p);}
+.tab:hover:not(.active){color:var(--mid);background:#FAF7FF;}
+
+/* ───── CONTENT ───── */
+.content{max-width:660px;margin:0 auto;padding:1.5rem 1rem 5.5rem;}
+.panel{display:none;}.panel.active{display:block;animation:fadeIn .25s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+.sec-title{
+  font-family:'Comfortaa',cursive;font-size:.88rem;font-weight:700;
+  color:var(--p);margin-bottom:1rem;
+  display:flex;align-items:center;gap:8px;
+}
+.sec-title::after{content:'';flex:1;height:1.5px;background:linear-gradient(90deg,var(--border),transparent);}
+
+/* ───── SUMMARY CARDS ───── */
+.scards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1.5rem;}
+@media(min-width:460px){.scards{grid-template-columns:repeat(4,1fr);}}
+.sc{
+  border-radius:var(--r);padding:.9rem 1rem;border:1.5px solid transparent;
+  transition:transform .2s,box-shadow .2s;
+}
+.sc:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+.sc-v{background:#F3E8FF;border-color:#DDD6FE;}
+.sc-g{background:#DCFCE7;border-color:#BBF7D0;}
+.sc-r{background:#FFE4F0;border-color:#FBCFE8;}
+.sc-y{background:#FEF9C3;border-color:#FDE68A;}
+.sc-lbl{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px;opacity:.7;}
+.sc-v .sc-lbl{color:var(--p);}
+.sc-g .sc-lbl{color:#15803D;}
+.sc-r .sc-lbl{color:#DB2777;}
+.sc-y .sc-lbl{color:#A16207;}
+.sc-val{font-family:'Comfortaa',cursive;font-size:1.1rem;font-weight:700;color:var(--dark);}
+.sc-sub{font-size:.62rem;color:var(--mid);margin-top:2px;font-weight:600;}
+
+/* ───── PAYER CARDS ───── */
+.plist{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem;}
+.pcard{
+  background:var(--white);border-radius:var(--r);
+  border:1.5px solid var(--border);
+  box-shadow:var(--shadow);
+  overflow:hidden;transition:box-shadow .2s,border-color .2s;
+}
+.pcard:hover{box-shadow:var(--shadow-lg);}
+.pcard.full{border-color:#BBF7D0;}
+.pcard-top{display:flex;align-items:center;gap:11px;padding:.8rem 1rem;}
+.pav{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.95rem;font-weight:800;font-family:'Comfortaa',cursive;
+  flex-shrink:0;border:2px solid;transition:all .3s;
+}
+.pinfo{flex:1;min-width:0;}
+.pchild{font-size:.88rem;font-weight:800;color:var(--dark);}
+.pparent{
+  font-size:.75rem;font-weight:600;color:var(--muted);
+  border:none;background:transparent;width:100%;outline:none;padding:0;
+  font-family:'Nunito',sans-serif;margin-top:1px;
+}
+.pparent:focus{color:var(--p);}
+.pright{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+.kadj{display:flex;align-items:center;gap:4px;}
+.kadjbtn{
+  width:22px;height:22px;border-radius:8px;
+  border:1.5px solid var(--border);background:var(--bg);
+  cursor:pointer;font-size:.9rem;color:var(--p);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;font-weight:700;
+}
+.kadjbtn:hover{background:var(--p);color:#fff;border-color:var(--p);}
+.kadjn{font-size:.75rem;font-weight:800;min-width:14px;text-align:center;}
+
+.sbadge{display:inline-block;font-size:.66rem;font-weight:800;padding:3px 9px;border-radius:100px;}
+.sb-yes{background:#DCFCE7;color:#15803D;}
+.sb-part{background:#FEF9C3;color:#A16207;}
+.sb-no{background:#FFE4F0;color:#BE185D;}
+
+/* pay row */
+.prow{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  padding:.65rem 1rem;
+  background:#FAFAFF;border-top:1.5px dashed var(--border);
+}
+.prow-lbl{font-size:.7rem;font-weight:800;color:var(--muted);white-space:nowrap;}
+.pinp-w{position:relative;flex:1;min-width:80px;max-width:130px;}
+.pinp{
+  width:100%;padding:5px 26px 5px 10px;
+  border:1.5px solid var(--border);border-radius:100px;
+  font-size:.82rem;font-weight:800;font-family:'Nunito',sans-serif;
+  color:var(--dark);outline:none;background:#fff;text-align:right;
+  transition:border-color .15s;
+}
+.pinp:focus{border-color:var(--p);}
+.pcur{position:absolute;right:9px;top:50%;transform:translateY(-50%);font-size:.65rem;font-weight:700;color:var(--muted);pointer-events:none;}
+.pof{font-size:.68rem;color:var(--muted);white-space:nowrap;font-weight:600;}
+.pbar-w{flex:1;min-width:36px;height:6px;background:var(--border);border-radius:100px;overflow:hidden;}
+.pbar{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--green),#86EFAC);transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+/* ─ BUTTONS ─ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  border-radius:100px;font-size:.75rem;font-weight:800;
+  cursor:pointer;border:1.5px solid;font-family:'Nunito',sans-serif;
+  transition:all .15s;white-space:nowrap;padding:6px 14px;
+}
+.btn-outline-orange{border-color:var(--orange);color:var(--orange);background:#FFF7ED;}
+.btn-outline-orange:hover{background:var(--orange);color:#fff;}
+.btn-solid-green{border-color:var(--green);color:var(--green);background:#F0FDF4;}
+.btn-add{
+  width:100%;padding:1rem;border:2px dashed var(--border);border-radius:var(--r);
+  background:transparent;color:var(--muted);font-size:.85rem;font-weight:800;
+  font-family:'Nunito',sans-serif;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:all .2s;margin-bottom:1.5rem;
+}
+.btn-add:hover{border-color:var(--p);color:var(--p);background:#FAF5FF;}
+
+/* ───── SPLIT ───── */
+.ig{margin-bottom:.85rem;}
+.il{font-size:.75rem;color:var(--mid);margin-bottom:4px;display:block;font-weight:800;}
+.irow{display:flex;gap:8px;}.irow .ig{flex:1;}
+.inp{
+  width:100%;padding:.65rem 1rem;
+  border:1.5px solid var(--border);border-radius:var(--rs);
+  font-size:.9rem;font-family:'Nunito',sans-serif;font-weight:700;
+  background:var(--white);color:var(--dark);outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+.inp:focus{border-color:var(--p);box-shadow:0 0 0 3px rgba(124,58,237,.1);}
+
+/* bill blocks */
+.bill{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r);overflow:hidden;margin-bottom:12px;
+  box-shadow:var(--shadow);
+}
+.bhdr{padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;}
+.bhdr.k{background:linear-gradient(135deg,#FFF7ED,#FDF2FF);border-bottom:1.5px solid #F3E8FF;}
+.bhdr.a{background:linear-gradient(135deg,#EFF6FF,#F5F3FF);border-bottom:1.5px solid #E8E1F5;}
+.bico{font-size:1.4rem;}
+.btitle{font-family:'Comfortaa',cursive;font-size:.88rem;font-weight:700;color:var(--dark);}
+.btot{margin-left:auto;font-family:'Comfortaa',cursive;font-size:1rem;font-weight:700;}
+.btot.kc{color:var(--pink);}
+.btot.ac{color:var(--p);}
+.brows{padding:.3rem 0;}
+.br{display:flex;justify-content:space-between;padding:.45rem 1.1rem;font-size:.82rem;}
+.br .bl{color:var(--mid);font-weight:600;}
+.br .bv{font-weight:800;}
+.br.good .bv{color:#15803D;}
+.br.bad .bv{color:#DC2626;}
+.br.str{border-top:1.5px solid var(--border);}
+.br.str .bl{color:var(--dark);font-weight:700;}
+
+/* final card */
+.final-card{
+  border-radius:var(--r);overflow:hidden;margin-bottom:12px;
+  box-shadow:0 8px 28px rgba(124,58,237,.25);
+}
+.final-body{
+  background:linear-gradient(135deg,#4C1D95,#7C3AED 50%,#C026D3);
+  padding:1.75rem 1.5rem;text-align:center;
+}
+.final-lbl{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.14em;margin-bottom:.5rem;}
+.final-amt{font-family:'Comfortaa',cursive;font-size:2.6rem;font-weight:700;color:#fff;line-height:1.1;margin-bottom:.3rem;}
+.final-sub{font-size:.8rem;color:rgba(255,255,255,.65);font-weight:600;}
+
+/* ───── INFO ───── */
+.icard{background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.25rem;margin-bottom:10px;box-shadow:var(--shadow);}
+.icard h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;margin-bottom:.9rem;color:var(--dark);}
+.idet{display:flex;align-items:flex-start;gap:11px;margin-bottom:9px;font-size:.84rem;font-weight:600;color:var(--dark);}
+.idet .ico{font-size:1.1rem;flex-shrink:0;margin-top:.1rem;}
+.idet a{color:var(--p);text-decoration:none;}.idet a:hover{text-decoration:underline;}
+
+.event-banner{
+  background:linear-gradient(135deg,#3B0764,#7C3AED,#C026D3);
+  border-radius:var(--r);padding:1.5rem;margin-bottom:10px;
+  box-shadow:0 8px 24px rgba(124,58,237,.3);
+}
+.event-banner h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.9rem;}
+.event-banner .idet{color:rgba(255,255,255,.9);}
+.event-banner .idet a{color:#FDE047;}
+
+.gh-banner{
+  background:linear-gradient(135deg,#0F172A,#1E293B);
+  border-radius:var(--r);padding:1.5rem;margin-bottom:10px;
+  box-shadow:0 4px 18px rgba(0,0,0,.2);
+}
+.gh-banner h3{font-family:'Comfortaa',cursive;font-size:.9rem;font-weight:700;color:#F1F5F9;margin-bottom:.85rem;}
+.gh-banner ol{padding-left:1.25rem;}
+.gh-banner li{font-size:.83rem;line-height:1.8;color:#94A3B8;font-weight:600;margin-bottom:2px;}
+.gh-banner a{color:#FDE047;}
+.gh-banner strong{color:#E2E8F0;}
+
+/* ───── SAVE BAR ───── */
+.savebar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(16px);
+  border-top:1.5px solid var(--border);
+  padding:.7rem 1rem;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:200;
+}
+.save-info{font-size:.72rem;color:var(--muted);font-weight:700;}
+.save-info strong{color:var(--p);}
+.save-actions{display:flex;gap:7px;}
+.sbtn-dl{
+  padding:8px 16px;background:var(--bg);color:var(--p);
+  border:1.5px solid var(--border);border-radius:100px;
+  font-size:.76rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;transition:all .15s;
+}
+.sbtn-dl:hover{background:var(--p);color:#fff;border-color:var(--p);}
+.sbtn-save{
+  padding:8px 20px;
+  background:linear-gradient(135deg,var(--p),var(--pink));
+  color:#fff;border:none;border-radius:100px;
+  font-size:.76rem;font-weight:800;font-family:'Nunito',sans-serif;
+  cursor:pointer;box-shadow:0 4px 14px rgba(124,58,237,.3);transition:opacity .15s;
+}
+.sbtn-save:hover{opacity:.88;}
+
+.toast{
+  position:fixed;top:74px;left:50%;
+  transform:translateX(-50%) translateY(-14px);
+  background:var(--dark);color:#FDE047;
+  padding:9px 20px;border-radius:100px;
+  font-size:.8rem;font-weight:800;
+  opacity:0;transition:all .25s;z-index:999;white-space:nowrap;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+canvas#cf{position:fixed;inset:0;pointer-events:none;z-index:998;display:none;}
 </style>
 </head>
 <body>
+<canvas id="cf"></canvas>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="hero-emoji">🎓 🌈 🎉</div>
+  <div class="hero-blob1"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-tag">🌸 Группа Жайна · 2026 🌸</div>
   <h1>Выпускной!</h1>
-  <div class="hero-group">🌸 Группа Жайна · 2025 🌸</div>
-  <div class="event-strip">
-    <div class="event-chip">📅 26 мая 2026</div>
-    <div class="event-chip">⏰ 18:00</div>
-    <div class="event-chip">📍 Кафе OiNA</div>
-    <div class="event-chip">🟦 Майнкрафт</div>
-    <div class="event-chip">🩷 Киси Миси</div>
+  <p class="hero-sub">Детский сад · Последний звонок 🎓</p>
+  <div class="chips">
+    <div class="chip">📅 26 мая 2026</div>
+    <div class="chip">⏰ 18:00</div>
+    <div class="chip">📍 Кафе OiNA</div>
+    <div class="chip">🟦 Майнкрафт</div>
+    <div class="chip">🩷 Киси Миси</div>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="hero-stat-num" id="h-kids">15</span><span class="hero-stat-lbl">детей</span></div>
-    <div class="hero-stat"><span class="hero-stat-num" id="h-paid">0/15</span><span class="hero-stat-lbl">полностью</span></div>
-    <div class="hero-stat"><span class="hero-stat-num" id="h-collected">0</span><span class="hero-stat-lbl">тыс. тг</span></div>
+    <div class="hst"><div class="hst-n" id="h-kids">15</div><div class="hst-l">детей</div></div>
+    <div class="hst"><div class="hst-n" id="h-paid">0/15</div><div class="hst-l">сдали</div></div>
+    <div class="hst"><div class="hst-n" id="h-sum">0</div><div class="hst-l">тыс. тг</div></div>
+  </div>
+  <div class="cd-wrap">
+    <div class="cd-lbl">⏳ До выпускного осталось</div>
+    <div class="cd-done" id="cd-done">🎉 Выпускной уже идёт!</div>
+    <div class="cd-row" id="cd-row">
+      <div class="cd-cell"><span class="cd-n" id="cd-d">00</span><div class="cd-u">дней</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n" id="cd-h">00</span><div class="cd-u">часов</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n" id="cd-m">00</span><div class="cd-u">минут</div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-cell"><span class="cd-n" id="cd-s">00</span><div class="cd-u">секунд</div></div>
+    </div>
   </div>
 </div>
 
-<div class="countdown-wrap">
-  <div class="countdown-label">⏳ До начала выпускного осталось</div>
-  <div id="cd-done-msg" class="cd-done" style="display:none">🎉 Выпускной уже идёт!</div>
-  <div class="countdown-boxes" id="cd-boxes">
-    <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-unit">дней</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-unit">часов</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><span class="cd-num" id="cd-m">00</span><span class="cd-unit">минут</span></div>
-    <div class="cd-sep">:</div>
-    <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-unit">секунд</span></div>
-  </div>
-  <div style="font-size:.72rem;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:.75rem;">26 мая 2026 · 18:00 · Кафе OiNA</div>
-</div>
+<!-- PROGRESS -->
 <div class="prog-wrap">
-  <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+  <div class="prog-track"><div class="prog-fill" id="pf" style="width:0%"></div></div>
   <div class="prog-labels">
-    <span id="prog-left">Собираем взносы... 💪</span>
-    <span id="prog-pct">0%</span>
+    <span id="pl">Собираем взносы 💪</span>
+    <span id="pp">0%</span>
   </div>
 </div>
 
+<!-- TABS -->
 <div class="tabs">
   <button class="tab active" onclick="showPanel('collect',this)">💰 Сбор</button>
   <button class="tab" onclick="showPanel('split',this)">📊 Счета</button>
@@ -197,79 +403,93 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--dark);min-
 
 <div class="content">
 
+  <!-- COLLECT -->
   <div class="panel active" id="panel-collect">
-    <div class="mini-cards" id="summary-cards"></div>
-    <div class="sec-title">🧒 Наши выпускники</div>
-    <div class="payer-list" id="payer-list"></div>
-    <button class="add-btn" onclick="addPayer()">＋ Добавить семью</button>
+    <div class="scards" id="scards"></div>
+    <div class="sec-title">🎓 Наши выпускники</div>
+    <div class="plist" id="plist"></div>
+    <button class="btn-add" onclick="addPayer()">＋ Добавить семью</button>
   </div>
 
+  <!-- SPLIT -->
   <div class="panel" id="panel-split">
     <div class="sec-title">🍭 Детский счёт</div>
-    <div class="input-group"><label class="input-label">Пакет на ребёнка (тг) — уже оплачено из сбора</label><input class="inp" type="number" id="kid-pkg" value="10000" oninput="save();recalc()"></div>
-    <div class="input-group"><label class="input-label">Доп. заказ детям — итого (тг, если дозаказали)</label><input class="inp" type="number" id="kid-extra" value="0" oninput="save();recalc()"></div>
+    <div class="ig">
+      <label class="il">Пакет на ребёнка (тг)</label>
+      <input class="inp" type="number" id="kid-pkg" value="10000" oninput="save();recalc()">
+    </div>
+    <div class="ig">
+      <label class="il">Доп. заказ детям — итого (тг)</label>
+      <input class="inp" type="number" id="kid-extra" value="0" oninput="save();recalc()">
+    </div>
     <div class="sec-title">🥂 Взрослый счёт</div>
-    <div class="inp-row">
-      <div class="input-group"><label class="input-label">Взрослых пришло (чел.)</label><input class="inp" type="number" id="adult-cnt" value="15" min="1" oninput="save();recalc()"></div>
-      <div class="input-group"><label class="input-label">Общий счёт взрослых (тг)</label><input class="inp" type="number" id="adult-food" value="0" oninput="save();recalc()"></div>
+    <div class="irow">
+      <div class="ig">
+        <label class="il">Взрослых пришло (чел.)</label>
+        <input class="inp" type="number" id="adult-cnt" value="15" oninput="save();recalc()">
+      </div>
+      <div class="ig">
+        <label class="il">Общий счёт взрослых (тг)</label>
+        <input class="inp" type="number" id="adult-food" value="0" oninput="save();recalc()">
+      </div>
     </div>
     <div class="sec-title">✨ Итог</div>
-    <div id="bill-output"></div>
+    <div id="bill-out"></div>
   </div>
 
+  <!-- INFO -->
   <div class="panel" id="panel-info">
-    <div class="event-info-card">
+    <div class="event-banner">
       <h3>📋 Детали мероприятия</h3>
-      <div class="event-detail"><span>📅</span><span>26 мая 2026, начало в <strong>18:00</strong></span></div>
-      <div class="event-detail"><span>📍</span><span>Кафе <strong>OiNA</strong><br>ул. Тауелсиздик, 23, Астана<br><a href="https://2gis.kz/astana/search/Тауелсиздик%2023" target="_blank">Открыть на карте →</a></span></div>
-      <div class="event-detail"><span>🟦</span><span>Аниматор: <strong>Майнкрафт</strong> (синий персонаж)</span></div>
-      <div class="event-detail"><span>🩷</span><span>Аниматор: <strong>Киси Миси</strong> (розовый персонаж)</span></div>
-      <div class="event-detail"><span>💰</span><span>Взнос: <strong>15 000 тг</strong> за ребёнка (сдаём организатору)</span></div>
+      <div class="idet"><span class="ico">📅</span><span>26 мая 2026, начало в <strong>18:00</strong></span></div>
+      <div class="idet"><span class="ico">📍</span><span>Кафе <strong>OiNA</strong>, ул. Тауелсиздик, 23<br><a href="https://2gis.kz/astana/search/OiNA" target="_blank">Открыть на карте →</a></span></div>
+      <div class="idet"><span class="ico">🟦</span><span>Аниматор: <strong>Майнкрафт</strong> (синий)</span></div>
+      <div class="idet"><span class="ico">🩷</span><span>Аниматор: <strong>Киси Миси</strong> (розовый)</span></div>
+      <div class="idet"><span class="ico">💰</span><span>Взнос: <strong>15 000 тг</strong> за ребёнка</span></div>
     </div>
-    <div class="netlify-box">
-      <h3>🚀 Как поделиться ссылкой в WhatsApp</h3>
+    <div class="gh-banner">
+      <h3>🔄 Как обновить страницу для всех</h3>
       <ol>
-        <li>Нажмите кнопку «⬇ HTML» внизу</li>
-        <li>Откройте <a href="https://netlify.com/drop" target="_blank">netlify.com/drop</a></li>
-        <li>Перетащите скачанный файл в браузер</li>
-        <li>Получите постоянную ссылку за 30 секунд!</li>
-        <li>Кидайте в группу WhatsApp 🎉</li>
+        <li>Внесите данные → нажмите <strong>«⬇ HTML»</strong> внизу</li>
+        <li>Зайдите на <a href="https://github.com/timakoafi-a11y/zhayna" target="_blank">github.com/timakoafi-a11y/zhayna</a></li>
+        <li>Нажмите на файл → ✏️ → Upload file → новый файл</li>
+        <li>Нажмите <strong>Commit changes</strong> — через 1-2 мин обновится</li>
       </ol>
-      <p style="margin-top:10px;font-size:.75rem;opacity:.7">Бесплатно. Без регистрации.</p>
     </div>
-    <div class="info-card">
+    <div class="icard">
       <h3>Как работает сбор</h3>
-      <ol>
-        <li>Взнос: <strong>15 000 тг</strong> за каждого ребёнка</li>
-        <li>Можно сдавать частями — введите сколько уже дали</li>
-        <li>10 000 тг → детский пакет · 5 000 тг → взрослые расходы</li>
-        <li>После вечера заполните «Счета» с реальными суммами</li>
-      </ol>
+      <div class="idet"><span class="ico">1️⃣</span><span>Взнос <strong>15 000 тг</strong> за каждого ребёнка</span></div>
+      <div class="idet"><span class="ico">2️⃣</span><span>Можно сдавать частями — вводите сколько уже дали</span></div>
+      <div class="idet"><span class="ico">3️⃣</span><span>10 000 тг → пакет ребёнка · 5 000 тг → резерв</span></div>
+      <div class="idet"><span class="ico">4️⃣</span><span>После вечера заполните «Счета» — калькулятор всё посчитает</span></div>
     </div>
-    <button class="add-btn" onclick="downloadHTML()">⬇️ Скачать HTML с данными</button>
+    <button class="btn-add" onclick="downloadHTML()">⬇️ Скачать HTML с моими данными</button>
   </div>
-
 </div>
 
-<div class="save-banner">
-  <div class="save-info">Сохранено: <strong id="last-saved">только что</strong></div>
-  <button class="btn-dl" onclick="downloadHTML()">⬇ HTML</button>
-  <button class="btn-save" onclick="saveManual()">💾 Сохранить</button>
+<!-- SAVE BAR -->
+<div class="savebar">
+  <div class="save-info">Сохранено: <strong id="ls">только что</strong></div>
+  <div class="save-actions">
+    <button class="sbtn-dl" onclick="downloadHTML()">⬇ HTML</button>
+    <button class="sbtn-save" onclick="saveManual()">💾 Сохранить</button>
+  </div>
 </div>
-<div class="toast" id="toast">Сохранено ✓</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const COLLECT=15000,KID_BASE=10000;
 const AV=[
-  {bg:'#FFE4F0',border:'#FB6FAB',text:'#DB2777'},
-  {bg:'#F3E8FF',border:'#C084FC',text:'#7C3AED'},
-  {bg:'#DCFCE7',border:'#4ADE80',text:'#16A34A'},
-  {bg:'#DBEAFE',border:'#60A5FA',text:'#2563EB'},
-  {bg:'#FEF9C3',border:'#FDE047',text:'#A16207'},
-  {bg:'#FFEDD5',border:'#FB923C',text:'#EA580C'},
-  {bg:'#E0F2FE',border:'#38BDF8',text:'#0284C7'},
-  {bg:'#FCE7F3',border:'#F472B6',text:'#BE185D'},
+  {bg:'#FFE4F0',b:'#FB6FAB',t:'#DB2777'},
+  {bg:'#F3E8FF',b:'#C084FC',t:'#7C3AED'},
+  {bg:'#DCFCE7',b:'#4ADE80',t:'#16A34A'},
+  {bg:'#DBEAFE',b:'#60A5FA',t:'#2563EB'},
+  {bg:'#FEF9C3',b:'#FDE047',t:'#A16207'},
+  {bg:'#FFEDD5',b:'#FB923C',t:'#EA580C'},
+  {bg:'#E0F2FE',b:'#38BDF8',t:'#0284C7'},
+  {bg:'#FCE7F3',b:'#F472B6',t:'#BE185D'},
 ];
+const EM=['🦁','🐯','🐻','🦊','🐼','🐨','🐸','🦋','⭐','🎈'];
 const DEF=[
   {child:'Лана',   name:'Мама Ланы',    kids:1,paid:0},
   {child:'Платон', name:'Мама Платона', kids:1,paid:0},
@@ -287,157 +507,143 @@ const DEF=[
   {child:'Марк',   name:'Мама Марка',   kids:1,paid:0},
   {child:'Юля',    name:'Мама Юли',     kids:1,paid:0},
 ];
-let state={payers:DEF.map(p=>({...p})),kidPkg:10000,kidExtra:0,adultFood:0,teacherCnt:2,teacherFood:0,misc:0};
+let state={payers:DEF.map(p=>({...p})),kidPkg:10000,kidExtra:0,adultCnt:15,adultFood:0};
 
-function load(){try{const r=localStorage.getItem('zhayna_v4');if(r){const d=JSON.parse(r);state={...state,...d};}}catch(e){}}
+function load(){try{const r=localStorage.getItem('zhayna_v6');if(r){const d=JSON.parse(r);state={...state,...d};}}catch(e){}}
 function save(){
   try{
     state.kidPkg=+(document.getElementById('kid-pkg')?.value||10000);
     state.kidExtra=+(document.getElementById('kid-extra')?.value||0);
     state.adultCnt=+(document.getElementById('adult-cnt')?.value||15);
     state.adultFood=+(document.getElementById('adult-food')?.value||0);
-    localStorage.setItem('zhayna_v4',JSON.stringify(state));
+    localStorage.setItem('zhayna_v6',JSON.stringify(state));
     const n=new Date();
-    document.getElementById('last-saved').textContent=n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
+    document.getElementById('ls').textContent=
+      n.getHours().toString().padStart(2,'0')+':'+n.getMinutes().toString().padStart(2,'0');
   }catch(e){}
 }
-function saveManual(){save();const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000);}
+function saveManual(){save();toast('Сохранено ✓');}
 function fmt(n){return Math.round(n).toLocaleString('ru-RU');}
 function totalKids(){return state.payers.reduce((s,p)=>s+p.kids,0);}
-function totalAdults(){return state.payers.length;}
 function paidAmt(p){return Math.min(p.paid||0,p.kids*COLLECT);}
 function isFull(p){return paidAmt(p)>=p.kids*COLLECT;}
 function av(i){return AV[i%AV.length];}
+function em(i){return EM[i%EM.length];}
 function initials(c){const p=c.trim().split(' ');return(p[0][0]+(p[1]?p[1][0]:'')).toUpperCase();}
 
-function statusBadge(p){
-  const got=paidAmt(p),due=p.kids*COLLECT;
-  if(got<=0)return'<span class="status-badge sb-none">Не сдал</span>';
-  if(got>=due)return'<span class="status-badge sb-full">✓ Полностью</span>';
-  return`<span class="status-badge sb-partial">Частично ${fmt(got)} тг</span>`;
-}
-
-function renderHero(){
-  const kids=totalKids(),adults=totalAdults();
-  const fullCnt=state.payers.filter(p=>isFull(p)).length;
-  const collected=state.payers.reduce((s,p)=>s+paidAmt(p),0);
-  const total=kids*COLLECT;
-  const pct=total>0?Math.min(100,Math.round(collected/total*100)):0;
+function renderTop(){
+  const kids=totalKids(),adults=state.payers.length;
+  const fc=state.payers.filter(p=>isFull(p)).length;
+  const col=state.payers.reduce((s,p)=>s+paidAmt(p),0);
+  const tot=kids*COLLECT,pct=tot>0?Math.min(100,Math.round(col/tot*100)):0;
   document.getElementById('h-kids').textContent=kids;
-  document.getElementById('h-paid').textContent=fullCnt+'/'+adults;
-  document.getElementById('h-collected').textContent=Math.round(collected/1000);
-  document.getElementById('prog-fill').style.width=pct+'%';
-  document.getElementById('prog-pct').textContent=pct+'%';
-  document.getElementById('prog-left').textContent=collected>=total?'🎉 Все сдали! Ура!':`Собрано ${fmt(collected)} из ${fmt(total)} тг`;
+  document.getElementById('h-paid').textContent=fc+'/'+adults;
+  document.getElementById('h-sum').textContent=Math.round(col/1000);
+  document.getElementById('pf').style.width=pct+'%';
+  document.getElementById('pp').textContent=pct+'%';
+  document.getElementById('pl').textContent=col>=tot?'🎉 Все сдали! Ура!':`Собрано ${fmt(col)} из ${fmt(tot)} тг`;
+  if(pct===100)confetti();
 }
 
-function renderSummary(){
-  const kids=totalKids(),adults=totalAdults();
-  const total=kids*COLLECT;
-  const collected=state.payers.reduce((s,p)=>s+paidAmt(p),0);
-  const fullCnt=state.payers.filter(p=>isFull(p)).length;
-  const partCnt=state.payers.filter(p=>paidAmt(p)>0&&!isFull(p)).length;
-  const waitCnt=state.payers.filter(p=>paidAmt(p)<=0).length;
-  document.getElementById('summary-cards').innerHTML=`
-    <div class="mini-card mc-purple"><div class="mini-card-lbl">Всего к сбору</div><div class="mini-card-val">${fmt(total)} тг</div><div class="mini-card-sub">${kids} дет. × 15 000</div></div>
-    <div class="mini-card mc-green"><div class="mini-card-lbl">Собрано</div><div class="mini-card-val">${fmt(collected)} тг</div><div class="mini-card-sub">${fullCnt} полн., ${partCnt} частично</div></div>
-    <div class="mini-card mc-pink"><div class="mini-card-lbl">Осталось</div><div class="mini-card-val">${fmt(total-collected)} тг</div><div class="mini-card-sub">${waitCnt} семей ждём</div></div>
-    <div class="mini-card mc-yellow"><div class="mini-card-lbl">Резерв взрослым</div><div class="mini-card-val">${fmt((COLLECT-KID_BASE)*kids)} тг</div><div class="mini-card-sub">5 000 × ${kids}</div></div>
-  `;
+function renderCards(){
+  const kids=totalKids(),tot=kids*COLLECT;
+  const col=state.payers.reduce((s,p)=>s+paidAmt(p),0);
+  const fc=state.payers.filter(p=>isFull(p)).length;
+  const pc=state.payers.filter(p=>paidAmt(p)>0&&!isFull(p)).length;
+  const wc=state.payers.filter(p=>paidAmt(p)<=0).length;
+  document.getElementById('scards').innerHTML=`
+    <div class="sc sc-v"><div class="sc-lbl">Всего к сбору</div><div class="sc-val">${fmt(tot)} тг</div><div class="sc-sub">${kids} дет. × 15 000</div></div>
+    <div class="sc sc-g"><div class="sc-lbl">Собрано</div><div class="sc-val">${fmt(col)} тг</div><div class="sc-sub">${fc} полн. · ${pc} частично</div></div>
+    <div class="sc sc-r"><div class="sc-lbl">Осталось</div><div class="sc-val">${fmt(tot-col)} тг</div><div class="sc-sub">${wc} семей ждём</div></div>
+    <div class="sc sc-y"><div class="sc-lbl">Резерв взрослым</div><div class="sc-val">${fmt((COLLECT-KID_BASE)*kids)} тг</div><div class="sc-sub">5 000 × ${kids}</div></div>`;
 }
 
 function renderList(){
-  const el=document.getElementById('payer-list');
+  const el=document.getElementById('plist');
   el.innerHTML='';
   state.payers.forEach((p,i)=>{
     const c=av(i),due=p.kids*COLLECT,got=paidAmt(p);
     const pct=due>0?Math.min(100,Math.round(got/due*100)):0;
     const full=got>=due;
-    const div=document.createElement('div');
-    div.className='payer-card'+(full?' fully-paid':'');
-    div.innerHTML=`
-      <div class="payer-top">
-        <div class="payer-avatar" style="background:${c.bg};border-color:${c.border};color:${c.text}">${full?'✓':initials(p.child)}</div>
-        <div class="payer-info">
-          <div class="payer-child">🎓 ${p.child}</div>
-          <input class="payer-name-input" value="${p.name}" placeholder="Имя родителя" oninput="state.payers[${i}].name=this.value;save();">
+    const d=document.createElement('div');
+    d.className='pcard'+(full?' full':'');
+    d.innerHTML=`
+      <div class="pcard-top">
+        <div class="pav" style="background:${c.bg};border-color:${c.b};color:${c.t}">${full?'✓':initials(p.child)}</div>
+        <div class="pinfo">
+          <div class="pchild">${em(i)} ${p.child}</div>
+          <input class="pparent" value="${p.name}" placeholder="Имя родителя" oninput="state.payers[${i}].name=this.value;save();">
         </div>
-        <div class="payer-right">
-          <div class="kids-adj">
-            <button class="adj-btn" onclick="adjKids(${i},-1)">−</button>
-            <span class="adj-num">${p.kids}</span>
-            <button class="adj-btn" onclick="adjKids(${i},1)">+</button>
+        <div class="pright">
+          <div class="kadj">
+            <button class="kadjbtn" onclick="adjK(${i},-1)">−</button>
+            <span class="kadjn">${p.kids}</span>
+            <button class="kadjbtn" onclick="adjK(${i},1)">+</button>
           </div>
-          ${statusBadge(p)}
+          ${full?'<span class="sbadge sb-yes">✓ Полностью</span>':got>0?`<span class="sbadge sb-part">Частично ${fmt(got)}</span>`:'<span class="sbadge sb-no">Не сдал</span>'}
         </div>
       </div>
-      <div class="pay-row">
-        <span class="pay-label">Сдано:</span>
-        <div class="pay-input-wrap">
-          <input class="pay-input" id="pi_${i}" type="number" min="0" max="${due}" step="500"
-            value="${got>0?got:''}" placeholder="0"
-            oninput="setPaid(${i},+this.value)">
-          <span class="pay-curr">тг</span>
+      <div class="prow">
+        <span class="prow-lbl">Сдано:</span>
+        <div class="pinp-w">
+          <input class="pinp" type="number" min="0" max="${due}" step="500" value="${got||''}" placeholder="0" oninput="setPaid(${i},+this.value)">
+          <span class="pcur">тг</span>
         </div>
-        <span class="pay-of">из ${fmt(due)}</span>
-        <div class="pay-bar-wrap"><div class="pay-bar" style="width:${pct}%"></div></div>
-        <button class="btn-full ${full?'done':'waiting'}" onclick="setFull(${i})">${full?'✓ Всё':'Всё сдал'}</button>
-      </div>
-    `;
-    el.appendChild(div);
+        <span class="pof">из ${fmt(due)}</span>
+        <div class="pbar-w"><div class="pbar" style="width:${pct}%"></div></div>
+        <button class="btn ${full?'btn-solid-green':'btn-outline-orange'}" onclick="setFull(${i})">${full?'✓ Всё':'Всё сдал'}</button>
+      </div>`;
+    el.appendChild(d);
   });
-  renderHero();
-  renderSummary();
+  renderTop();renderCards();
 }
 
-function setPaid(i,val){
-  state.payers[i].paid=Math.min(Math.max(0,val),state.payers[i].kids*COLLECT);
+function setPaid(i,v){
+  const was=isFull(state.payers[i]);
+  state.payers[i].paid=Math.min(Math.max(0,v),state.payers[i].kids*COLLECT);
   save();renderList();
+  if(!was&&isFull(state.payers[i]))toast('🎉 '+state.payers[i].child+' — сдал всё!');
 }
-function setFull(i){state.payers[i].paid=state.payers[i].kids*COLLECT;save();renderList();}
-function adjKids(i,d){state.payers[i].kids=Math.max(1,state.payers[i].kids+d);save();renderList();}
-function addPayer(){state.payers.push({child:'Новый',name:'Имя родителя',kids:1,paid:0});save();renderList();setTimeout(()=>{const items=document.querySelectorAll('.payer-card');if(items.length)items[items.length-1].scrollIntoView({behavior:'smooth',block:'center'});},100);}
+function setFull(i){state.payers[i].paid=state.payers[i].kids*COLLECT;save();renderList();toast('🎉 '+state.payers[i].child+' — сдал всё!');}
+function adjK(i,d){state.payers[i].kids=Math.max(1,state.payers[i].kids+d);save();renderList();}
+function addPayer(){state.payers.push({child:'Новый',name:'Имя родителя',kids:1,paid:0});save();renderList();setTimeout(()=>{const it=document.querySelectorAll('.pcard');it[it.length-1]?.scrollIntoView({behavior:'smooth',block:'center'});},100);}
 
 function recalc(){
   const kids=totalKids();
   const kp=+(document.getElementById('kid-pkg')?.value||state.kidPkg);
   const ke=+(document.getElementById('kid-extra')?.value||state.kidExtra);
-  const adultCnt=+(document.getElementById('adult-cnt')?.value||state.adultCnt||15);
+  const ac=+(document.getElementById('adult-cnt')?.value||state.adultCnt);
   const af=+(document.getElementById('adult-food')?.value||state.adultFood);
-
-  const kidsTotal=kids*kp+ke;
-  const kidsCovered=kids*KID_BASE;
-  const kidsGap=Math.max(0,kidsTotal-kidsCovered);
-  const kidsExtraPP=kids>0?Math.ceil(kidsGap/kids):0;
-  const kidsDozPP=kids>0?Math.ceil(ke/kids):0;
-
-  const adultPP=adultCnt>0?Math.ceil(af/adultCnt):0;
-
-  const out=document.getElementById('bill-output');
+  const kT=kids*kp+ke,kC=kids*KID_BASE;
+  const doz=kids>0?Math.ceil(ke/kids):0;
+  const aPP=ac>0?Math.ceil(af/ac):0;
+  const out=document.getElementById('bill-out');
   if(!out)return;
   out.innerHTML=`
-    <div class="bill-block">
-      <div class="bill-header kids-hdr"><div class="bill-icon">🍭</div><div class="bill-title">Детский счёт</div><div class="bill-total kids-c">${fmt(kidsTotal)} тг</div></div>
-      <div class="bill-rows">
-        <div class="bill-row"><span class="lbl">Пакеты (${kids} × ${fmt(kp)} тг)</span><span class="val">${fmt(kids*kp)} тг</span></div>
-        <div class="bill-row good"><span class="lbl">Покрыто из сбора (10 000 × ${kids})</span><span class="val">−${fmt(kidsCovered)} тг</span></div>
-        ${ke>0?`<div class="bill-row"><span class="lbl">Доп. заказ детям (итого)</span><span class="val">${fmt(ke)} тг</span></div>
-        <div class="bill-row ${kidsGap>0?'bad':'good'} strong"><span class="lbl">Доп. за дозаказ с родителя</span><span class="val">${kidsDozPP>0?'+'+fmt(kidsDozPP)+' тг/ребёнка':'0 тг'}</span></div>`
-        :`<div class="bill-row good strong"><span class="lbl">Доп. за детей с родителя</span><span class="val">0 тг — всё покрыто ✓</span></div>`}
+    <div class="bill">
+      <div class="bhdr k"><div class="bico">🍭</div><div class="btitle">Детский счёт</div><div class="btot kc">${fmt(kT)} тг</div></div>
+      <div class="brows">
+        <div class="br"><span class="bl">Пакеты (${kids} × ${fmt(kp)} тг)</span><span class="bv">${fmt(kids*kp)} тг</span></div>
+        <div class="br good"><span class="bl">Покрыто из сбора</span><span class="bv">−${fmt(kC)} тг</span></div>
+        ${ke>0?`<div class="br"><span class="bl">Доп. заказ детям</span><span class="bv">${fmt(ke)} тг</span></div>
+        <div class="br bad str"><span class="bl">Доп. с родителя за дозаказ</span><span class="bv">+${fmt(doz)} тг</span></div>`
+        :`<div class="br good str"><span class="bl">Доп. с родителя</span><span class="bv">0 тг — покрыто ✓</span></div>`}
       </div>
     </div>
-    <div class="bill-block">
-      <div class="bill-header adult-hdr"><div class="bill-icon">🥂</div><div class="bill-title">Взрослый счёт</div><div class="bill-total adult-c">${fmt(af)} тг</div></div>
-      <div class="bill-rows">
-        <div class="bill-row"><span class="lbl">Общий счёт за стол взрослых</span><span class="val">${fmt(af)} тг</span></div>
-        <div class="bill-row"><span class="lbl">Взрослых пришло</span><span class="val">${adultCnt} чел.</span></div>
-        <div class="bill-row ${af>0?'bad':'good'} strong"><span class="lbl">С каждого взрослого</span><span class="val">${adultPP>0?fmt(adultPP)+' тг':'0 тг'}</span></div>
+    <div class="bill">
+      <div class="bhdr a"><div class="bico">🥂</div><div class="btitle">Взрослый счёт</div><div class="btot ac">${fmt(af)} тг</div></div>
+      <div class="brows">
+        <div class="br"><span class="bl">Общий счёт взрослых</span><span class="bv">${fmt(af)} тг</span></div>
+        <div class="br"><span class="bl">Взрослых пришло</span><span class="bv">${ac} чел.</span></div>
+        <div class="br ${af>0?'bad':''} str"><span class="bl">С каждого взрослого</span><span class="bv">${aPP>0?fmt(aPP)+' тг':'0 тг'}</span></div>
       </div>
     </div>
     <div class="final-card">
-      <div class="final-label">Итого в день вечера с каждого родителя</div>
-      <div class="final-amount">${fmt(kidsExtraPP+adultPP)} тг</div>
-      <div class="final-sub">${kidsExtraPP>0?fmt(kidsDozPP)+' тг (дозаказ детям) + ':''} ${adultPP>0?fmt(adultPP)+' тг (взрослый стол)':'взрослый стол: оплачивается отдельно на месте'}</div>
+      <div class="final-body">
+        <div class="final-lbl">Итого с родителя в день вечера</div>
+        <div class="final-amt">${fmt(doz+aPP)} тг</div>
+        <div class="final-sub">${doz>0?fmt(doz)+' тг дозаказ детей':''}${doz>0&&aPP>0?' + ':''}${aPP>0?fmt(aPP)+' тг взрослый стол':doz===0&&aPP===0?'Всё покрыто из сбора 🎉':''}</div>
+      </div>
     </div>`;
 }
 
@@ -449,43 +655,49 @@ function showPanel(name,btn){
   if(name==='split'){
     document.getElementById('kid-pkg').value=state.kidPkg;
     document.getElementById('kid-extra').value=state.kidExtra;
-    document.getElementById('adult-cnt').value=state.adultCnt||15;
+    document.getElementById('adult-cnt').value=state.adultCnt;
     document.getElementById('adult-food').value=state.adultFood;
     recalc();
   }
 }
 
-function downloadHTML(){
-  save();
-  const stateStr=JSON.stringify(state);
-  let html=document.documentElement.outerHTML;
-  html=html.replace('let state={',`const _PRE=${stateStr};\n  let state={`).replace('load();','state={...state,..._PRE};');
-  const blob=new Blob([html],{type:'text/html'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);a.download='vypusknoy-zhayna-2025.html';a.click();
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+
+/* countdown */
+function updateCD(){
+  const diff=new Date('2026-05-26T18:00:00')-new Date();
+  if(diff<=0){document.getElementById('cd-row').style.display='none';document.getElementById('cd-done').style.display='block';return;}
+  const set=(id,v)=>{const el=document.getElementById(id),s=String(v).padStart(2,'0');if(el.textContent!==s){el.textContent=s;el.classList.remove('pop');void el.offsetWidth;el.classList.add('pop');}};
+  set('cd-d',Math.floor(diff/86400000));
+  set('cd-h',Math.floor(diff%86400000/3600000));
+  set('cd-m',Math.floor(diff%3600000/60000));
+  set('cd-s',Math.floor(diff%60000/1000));
 }
 
-function updateCountdown(){
-  const target=new Date("2026-05-26T18:00:00");
-  const now=new Date();
-  const diff=target-now;
-  if(diff<=0){
-    document.getElementById("cd-boxes").style.display="none";
-    document.getElementById("cd-done-msg").style.display="inline-block";
-    return;
-  }
-  const d=Math.floor(diff/86400000);
-  const h=Math.floor((diff%86400000)/3600000);
-  const m=Math.floor((diff%3600000)/60000);
-  const s=Math.floor((diff%60000)/1000);
-  document.getElementById("cd-d").textContent=String(d).padStart(2,"0");
-  document.getElementById("cd-h").textContent=String(h).padStart(2,"0");
-  document.getElementById("cd-m").textContent=String(m).padStart(2,"0");
-  document.getElementById("cd-s").textContent=String(s).padStart(2,"0");
+/* confetti */
+function confetti(){
+  const c=document.getElementById('cf');c.style.display='block';
+  c.width=innerWidth;c.height=innerHeight;
+  const ctx=c.getContext('2d');
+  const cols=['#FF6B9D','#A855F7','#FDE047','#22C55E','#38BDF8','#FB923C'];
+  const ps=Array.from({length:100},()=>({x:Math.random()*c.width,y:-20,r:Math.random()*5+2,c:cols[Math.floor(Math.random()*cols.length)],vx:(Math.random()-.5)*4,vy:Math.random()*3+2,rot:Math.random()*360,vr:(Math.random()-.5)*6}));
+  let f=0;
+  (function draw(){ctx.clearRect(0,0,c.width,c.height);ps.forEach(p=>{ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(0,0,p.r,0,Math.PI*2);ctx.fill();ctx.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.vy+=.06;});f++;if(f<200)requestAnimationFrame(draw);else{ctx.clearRect(0,0,c.width,c.height);c.style.display='none';}})();
 }
-updateCountdown();
-setInterval(updateCountdown,1000);
-load();renderList();setInterval(save,30000);
+
+/* download */
+function downloadHTML(){
+  save();
+  const st=JSON.stringify(state);
+  let h=document.documentElement.outerHTML;
+  h=h.replace('let state={',`const _P=${st};\n  let state={`).replace('load();','state={...state,..._P};');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([h],{type:'text/html'}));
+  a.download='vypusknoy-zhayna.html';a.click();
+}
+
+load();renderList();updateCD();
+setInterval(updateCD,1000);setInterval(save,30000);
 </script>
 </body>
 </html>
